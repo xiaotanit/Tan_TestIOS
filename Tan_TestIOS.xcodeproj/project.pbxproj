@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D5A4E2B1EA8DAB300F048E7 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5A4E2A1EA8DAB300F048E7 /* TestVC.m */; };
 		8DB118DD1E9F456C009E67A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118DC1E9F456C009E67A8 /* main.m */; };
 		8DB118E01E9F456D009E67A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118DF1E9F456D009E67A8 /* AppDelegate.m */; };
 		8DB118E31E9F456D009E67A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118E21E9F456D009E67A8 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D5A4E291EA8DAB300F048E7 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		8D5A4E2A1EA8DAB300F048E7 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 		8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_TestIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB118DC1E9F456C009E67A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DB118DE1E9F456D009E67A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 				8DB118E91E9F456D009E67A8 /* LaunchScreen.storyboard */,
 				8DB118EC1E9F456D009E67A8 /* Info.plist */,
 				8DB118DB1E9F456C009E67A8 /* Supporting Files */,
+				8D5A4E291EA8DAB300F048E7 /* TestVC.h */,
+				8D5A4E2A1EA8DAB300F048E7 /* TestVC.m */,
 			);
 			path = Tan_TestIOS;
 			sourceTree = "<group>";
@@ -110,7 +115,8 @@
 				TargetAttributes = {
 					8DB118D71E9F456C009E67A8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 38ZB8SW96P;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -150,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D5A4E2B1EA8DAB300F048E7 /* TestVC.m in Sources */,
 				8DB118E31E9F456D009E67A8 /* ViewController.m in Sources */,
 				8DB118E01E9F456D009E67A8 /* AppDelegate.m in Sources */,
 				8DB118DD1E9F456C009E67A8 /* main.m in Sources */,
@@ -272,10 +279,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: you me (C9EZJ36TTC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: you me (C9EZJ36TTC)";
+				DEVELOPMENT_TEAM = 38ZB8SW96P;
 				INFOPLIST_FILE = Tan_TestIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yam.Tan-TestIOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "868a0681-71b0-415d-b1ca-e332ad342c43";
+				PROVISIONING_PROFILE_SPECIFIER = Developer_All_Device;
 			};
 			name = Debug;
 		};
@@ -283,6 +295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tan_TestIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yam.Tan-TestIOS";
@@ -309,6 +322,7 @@
 				8DB118F11E9F456D009E67A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
