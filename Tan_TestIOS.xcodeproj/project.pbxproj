@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8D5A4E2B1EA8DAB300F048E7 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5A4E2A1EA8DAB300F048E7 /* TestVC.m */; };
+		8D66ED021EAA071000616746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66ED011EAA071000616746 /* AppDelegate.swift */; };
+		8D66ED041EAA071000616746 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66ED031EAA071000616746 /* ViewController.swift */; };
+		8D66ED071EAA071000616746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED051EAA071000616746 /* Main.storyboard */; };
+		8D66ED091EAA071000616746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED081EAA071000616746 /* Assets.xcassets */; };
+		8D66ED0C1EAA071000616746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED0A1EAA071000616746 /* LaunchScreen.storyboard */; };
 		8DB118DD1E9F456C009E67A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118DC1E9F456C009E67A8 /* main.m */; };
 		8DB118E01E9F456D009E67A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118DF1E9F456D009E67A8 /* AppDelegate.m */; };
 		8DB118E31E9F456D009E67A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118E21E9F456D009E67A8 /* ViewController.m */; };
@@ -19,6 +24,13 @@
 /* Begin PBXFileReference section */
 		8D5A4E291EA8DAB300F048E7 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
 		8D5A4E2A1EA8DAB300F048E7 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		8D66ECFF1EAA071000616746 /* Tan_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D66ED011EAA071000616746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8D66ED031EAA071000616746 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D66ED061EAA071000616746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8D66ED081EAA071000616746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D66ED0B1EAA071000616746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D66ED0D1EAA071000616746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_TestIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB118DC1E9F456C009E67A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DB118DE1E9F456D009E67A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,6 +44,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8D66ECFC1EAA071000616746 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DB118D51E9F456C009E67A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,10 +61,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D66ED001EAA071000616746 /* Tan_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				8D66ED011EAA071000616746 /* AppDelegate.swift */,
+				8D66ED031EAA071000616746 /* ViewController.swift */,
+				8D66ED051EAA071000616746 /* Main.storyboard */,
+				8D66ED081EAA071000616746 /* Assets.xcassets */,
+				8D66ED0A1EAA071000616746 /* LaunchScreen.storyboard */,
+				8D66ED0D1EAA071000616746 /* Info.plist */,
+			);
+			path = Tan_Swift;
+			sourceTree = "<group>";
+		};
 		8DB118CF1E9F456C009E67A8 = {
 			isa = PBXGroup;
 			children = (
 				8DB118DA1E9F456C009E67A8 /* Tan_TestIOS */,
+				8D66ED001EAA071000616746 /* Tan_Swift */,
 				8DB118D91E9F456C009E67A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */,
+				8D66ECFF1EAA071000616746 /* Tan_Swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +121,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8D66ECFE1EAA071000616746 /* Tan_Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D66ED101EAA071000616746 /* Build configuration list for PBXNativeTarget "Tan_Swift" */;
+			buildPhases = (
+				8D66ECFB1EAA071000616746 /* Sources */,
+				8D66ECFC1EAA071000616746 /* Frameworks */,
+				8D66ECFD1EAA071000616746 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tan_Swift;
+			productName = Tan_Swift;
+			productReference = 8D66ECFF1EAA071000616746 /* Tan_Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8DB118D71E9F456C009E67A8 /* Tan_TestIOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DB118EF1E9F456D009E67A8 /* Build configuration list for PBXNativeTarget "Tan_TestIOS" */;
@@ -110,9 +161,14 @@
 		8DB118D01E9F456C009E67A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "M C";
 				TargetAttributes = {
+					8D66ECFE1EAA071000616746 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					8DB118D71E9F456C009E67A8 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 38ZB8SW96P;
@@ -134,11 +190,22 @@
 			projectRoot = "";
 			targets = (
 				8DB118D71E9F456C009E67A8 /* Tan_TestIOS */,
+				8D66ECFE1EAA071000616746 /* Tan_Swift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8D66ECFD1EAA071000616746 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D66ED0C1EAA071000616746 /* LaunchScreen.storyboard in Resources */,
+				8D66ED091EAA071000616746 /* Assets.xcassets in Resources */,
+				8D66ED071EAA071000616746 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DB118D61E9F456C009E67A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +219,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8D66ECFB1EAA071000616746 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D66ED041EAA071000616746 /* ViewController.swift in Sources */,
+				8D66ED021EAA071000616746 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DB118D41E9F456C009E67A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +242,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		8D66ED051EAA071000616746 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D66ED061EAA071000616746 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8D66ED0A1EAA071000616746 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D66ED0B1EAA071000616746 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		8DB118E41E9F456D009E67A8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -185,6 +277,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8D66ED0E1EAA071000616746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Tan_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yam.Tan-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8D66ED0F1EAA071000616746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Tan_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yam.Tan-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		8DB118ED1E9F456D009E67A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,6 +429,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8D66ED101EAA071000616746 /* Build configuration list for PBXNativeTarget "Tan_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D66ED0E1EAA071000616746 /* Debug */,
+				8D66ED0F1EAA071000616746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8DB118D31E9F456C009E67A8 /* Build configuration list for PBXProject "Tan_TestIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

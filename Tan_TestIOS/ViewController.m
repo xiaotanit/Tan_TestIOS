@@ -27,8 +27,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
-    
     self.textField.delegate = self;
     self.textField.layer.borderColor = [UIColor redColor].CGColor;
     self.textField.layer.borderWidth = 1;
@@ -51,8 +49,8 @@
     //遥远的将来，遥远的过去
     NSLog(@"distantFuture: %@, past: %@", [NSDate distantFuture], [NSDate distantPast]);
     
-//    [self testTime1];
-//    [self testTime2];
+    [self testTime1];
+    [self testTime2];
     [self testTime3];
     
     UIButton *pauseBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 380, 80, 30)];
@@ -87,7 +85,7 @@
 - (void)testTime2{
     NSLog(@"start .....");
     NSDate *date = [[NSDate date] dateByAddingTimeInterval:5];
-    NSTimer *timer = [[NSTimer alloc] initWithFireDate:date interval:1.5 target:self selector:@selector(printInfo:) userInfo:@"哈哈哈" repeats:YES];
+    NSTimer *timer = [[NSTimer alloc] initWithFireDate:date interval:1.5 target:self selector:@selector(printInfo2) userInfo:@"哈哈哈" repeats:YES];
     //NSDefaultRunLoopMode表示默认模式 NSRunLoopCommonModes：不堵塞线程模式、
     /*
      kCFRunLoopDefaultMode：app默认Mode，通常主线程是在这个Mode下运行
@@ -113,9 +111,9 @@
 
     //第三种方式， 手动将NSTimer设置模式
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [self printInfo:timer];
+        [self printInfo3];
     }];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 
 /** 暂停 */
