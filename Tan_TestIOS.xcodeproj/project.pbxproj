@@ -19,6 +19,13 @@
 		8DB118E61E9F456D009E67A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E41E9F456D009E67A8 /* Main.storyboard */; };
 		8DB118E81E9F456D009E67A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E71E9F456D009E67A8 /* Assets.xcassets */; };
 		8DB118EB1E9F456D009E67A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E91E9F456D009E67A8 /* LaunchScreen.storyboard */; };
+		EDDC27481EAF98C900B2B263 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC27471EAF98C900B2B263 /* main.m */; };
+		EDDC274B1EAF98CA00B2B263 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC274A1EAF98CA00B2B263 /* AppDelegate.m */; };
+		EDDC274E1EAF98CA00B2B263 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC274D1EAF98CA00B2B263 /* ViewController.m */; };
+		EDDC27511EAF98CA00B2B263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDC274F1EAF98CA00B2B263 /* Main.storyboard */; };
+		EDDC27531EAF98CA00B2B263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDC27521EAF98CA00B2B263 /* Assets.xcassets */; };
+		EDDC27561EAF98CA00B2B263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDC27541EAF98CA00B2B263 /* LaunchScreen.storyboard */; };
+		EDDC275D1EAFA5D700B2B263 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC275C1EAFA5D700B2B263 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +48,18 @@
 		8DB118E71E9F456D009E67A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DB118EA1E9F456D009E67A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DB118EC1E9F456D009E67A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDDC27441EAF98C900B2B263 /* Tan_Block.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_Block.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDDC27471EAF98C900B2B263 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EDDC27491EAF98C900B2B263 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EDDC274A1EAF98CA00B2B263 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EDDC274C1EAF98CA00B2B263 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EDDC274D1EAF98CA00B2B263 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EDDC27501EAF98CA00B2B263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDDC27521EAF98CA00B2B263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDDC27551EAF98CA00B2B263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDDC27571EAF98CA00B2B263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDDC275B1EAFA5D700B2B263 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		EDDC275C1EAFA5D700B2B263 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +71,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8DB118D51E9F456C009E67A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDDC27411EAF98C900B2B263 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,6 +105,7 @@
 			children = (
 				8DB118DA1E9F456C009E67A8 /* Tan_TestIOS */,
 				8D66ED001EAA071000616746 /* Tan_Swift */,
+				EDDC27451EAF98C900B2B263 /* Tan_Block */,
 				8DB118D91E9F456C009E67A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +115,7 @@
 			children = (
 				8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */,
 				8D66ECFF1EAA071000616746 /* Tan_Swift.app */,
+				EDDC27441EAF98C900B2B263 /* Tan_Block.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +142,32 @@
 			isa = PBXGroup;
 			children = (
 				8DB118DC1E9F456C009E67A8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDDC27451EAF98C900B2B263 /* Tan_Block */ = {
+			isa = PBXGroup;
+			children = (
+				EDDC27491EAF98C900B2B263 /* AppDelegate.h */,
+				EDDC274A1EAF98CA00B2B263 /* AppDelegate.m */,
+				EDDC274C1EAF98CA00B2B263 /* ViewController.h */,
+				EDDC274D1EAF98CA00B2B263 /* ViewController.m */,
+				EDDC274F1EAF98CA00B2B263 /* Main.storyboard */,
+				EDDC27521EAF98CA00B2B263 /* Assets.xcassets */,
+				EDDC27541EAF98CA00B2B263 /* LaunchScreen.storyboard */,
+				EDDC27571EAF98CA00B2B263 /* Info.plist */,
+				EDDC27461EAF98C900B2B263 /* Supporting Files */,
+				EDDC275B1EAFA5D700B2B263 /* Person.h */,
+				EDDC275C1EAFA5D700B2B263 /* Person.m */,
+			);
+			path = Tan_Block;
+			sourceTree = "<group>";
+		};
+		EDDC27461EAF98C900B2B263 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDDC27471EAF98C900B2B263 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,6 +209,23 @@
 			productReference = 8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EDDC27431EAF98C900B2B263 /* Tan_Block */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDDC275A1EAF98CA00B2B263 /* Build configuration list for PBXNativeTarget "Tan_Block" */;
+			buildPhases = (
+				EDDC27401EAF98C900B2B263 /* Sources */,
+				EDDC27411EAF98C900B2B263 /* Frameworks */,
+				EDDC27421EAF98C900B2B263 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tan_Block;
+			productName = Tan_Block;
+			productReference = EDDC27441EAF98C900B2B263 /* Tan_Block.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -174,6 +245,10 @@
 						DevelopmentTeam = 38ZB8SW96P;
 						ProvisioningStyle = Manual;
 					};
+					EDDC27431EAF98C900B2B263 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 8DB118D31E9F456C009E67A8 /* Build configuration list for PBXProject "Tan_TestIOS" */;
@@ -191,6 +266,7 @@
 			targets = (
 				8DB118D71E9F456C009E67A8 /* Tan_TestIOS */,
 				8D66ECFE1EAA071000616746 /* Tan_Swift */,
+				EDDC27431EAF98C900B2B263 /* Tan_Block */,
 			);
 		};
 /* End PBXProject section */
@@ -216,6 +292,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDDC27421EAF98C900B2B263 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDC27561EAF98CA00B2B263 /* LaunchScreen.storyboard in Resources */,
+				EDDC27531EAF98CA00B2B263 /* Assets.xcassets in Resources */,
+				EDDC27511EAF98CA00B2B263 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -236,6 +322,17 @@
 				8DB118E31E9F456D009E67A8 /* ViewController.m in Sources */,
 				8DB118E01E9F456D009E67A8 /* AppDelegate.m in Sources */,
 				8DB118DD1E9F456C009E67A8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDDC27401EAF98C900B2B263 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDC274E1EAF98CA00B2B263 /* ViewController.m in Sources */,
+				EDDC274B1EAF98CA00B2B263 /* AppDelegate.m in Sources */,
+				EDDC275D1EAFA5D700B2B263 /* Person.m in Sources */,
+				EDDC27481EAF98C900B2B263 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +367,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				8DB118EA1E9F456D009E67A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EDDC274F1EAF98CA00B2B263 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDDC27501EAF98CA00B2B263 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDDC27541EAF98CA00B2B263 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDDC27551EAF98CA00B2B263 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -426,6 +539,32 @@
 			};
 			name = Release;
 		};
+		EDDC27581EAF98CA00B2B263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Tan_Block/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xindongai.Tan-Block";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EDDC27591EAF98CA00B2B263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Tan_Block/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xindongai.Tan-Block";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -455,6 +594,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EDDC275A1EAF98CA00B2B263 /* Build configuration list for PBXNativeTarget "Tan_Block" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDDC27581EAF98CA00B2B263 /* Debug */,
+				EDDC27591EAF98CA00B2B263 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
