@@ -200,7 +200,24 @@ class ViewController: UIViewController {
         let blackHeart = "\u{2665}"           // ♥, Unicode 标量 U+2665
         let sparklingHeart = "\u{1F496}"      // 💖, Unicode 标量 U+1F496
         let c1 = "\u{1F425}", c2 = "\u{0061}"
-        print("wiseWords: \(wiseWords), dollarSign:\(dollarSign), blackHeart:\(blackHeart), sparklingHeart:\(sparklingHeart), c1:\(c1), c2:\(c2)");
+        let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}" // regionalIndicatorForUS 是 🇺🇸
+        print("wiseWords: \(wiseWords), dollarSign:\(dollarSign), blackHeart:\(blackHeart), sparklingHeart:\(sparklingHeart), c1:\(c1), c2:\(c2), regionalIndicatorForUS: \(regionalIndicatorForUS)");
+        
+        //获取字符串中Character的数量
+        let unusualMenagerie = "Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪" //unusualMenagerie has 40 characters
+        print("unusualMenagerie has \(unusualMenagerie.characters.count) characters")
+        
+        let str_1 = "😊😭"
+        print("str_1.length: \(str_1.characters.count)");  //str_1.length: 2
+        
+        //获取最前面的字符和最后面的字符
+        var str_2 = "click me!"
+        for index in str_2.characters.indices {
+            print("\(str_2[index]) ", terminator: "")
+        }
+        str_2.insert("店", at: str_2.startIndex)
+        str_2.insert("张", at: str_2.endIndex) //插入单个zi'fu
+        print("\nstr_2: \(str_2)")
     }
     
     func testCatchError() throws {

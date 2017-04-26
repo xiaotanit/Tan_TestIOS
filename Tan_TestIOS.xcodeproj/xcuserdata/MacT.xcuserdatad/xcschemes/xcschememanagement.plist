@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Tan_Block.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Tan_Notification.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Tan_NotificationService.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Tan_Swift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -14,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Tan_TestNotifi.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +43,26 @@
 			<true/>
 		</dict>
 		<key>8DB118D71E9F456C009E67A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DBAFACC1EB0A3E50009DEEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DBAFAE51EB0A4E00009DEEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DE8E1501EB0502E00DD5975</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDDC27431EAF98C900B2B263</key>
 		<dict>
 			<key>primary</key>
 			<true/>

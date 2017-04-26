@@ -19,6 +19,12 @@
 		8DB118E61E9F456D009E67A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E41E9F456D009E67A8 /* Main.storyboard */; };
 		8DB118E81E9F456D009E67A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E71E9F456D009E67A8 /* Assets.xcassets */; };
 		8DB118EB1E9F456D009E67A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E91E9F456D009E67A8 /* LaunchScreen.storyboard */; };
+		8DE8E1551EB0502E00DD5975 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8E1541EB0502E00DD5975 /* main.m */; };
+		8DE8E1581EB0502E00DD5975 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8E1571EB0502E00DD5975 /* AppDelegate.m */; };
+		8DE8E15B1EB0502E00DD5975 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8E15A1EB0502E00DD5975 /* ViewController.m */; };
+		8DE8E15E1EB0502E00DD5975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE8E15C1EB0502E00DD5975 /* Main.storyboard */; };
+		8DE8E1601EB0502E00DD5975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE8E15F1EB0502E00DD5975 /* Assets.xcassets */; };
+		8DE8E1631EB0502E00DD5975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE8E1611EB0502E00DD5975 /* LaunchScreen.storyboard */; };
 		EDDC27481EAF98C900B2B263 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC27471EAF98C900B2B263 /* main.m */; };
 		EDDC274B1EAF98CA00B2B263 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC274A1EAF98CA00B2B263 /* AppDelegate.m */; };
 		EDDC274E1EAF98CA00B2B263 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC274D1EAF98CA00B2B263 /* ViewController.m */; };
@@ -27,6 +33,19 @@
 		EDDC27561EAF98CA00B2B263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDC27541EAF98CA00B2B263 /* LaunchScreen.storyboard */; };
 		EDDC275D1EAFA5D700B2B263 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC275C1EAFA5D700B2B263 /* Person.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DBAFAE11EB0A3E60009DEEC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8D5A4E291EA8DAB300F048E7 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
@@ -48,6 +67,19 @@
 		8DB118E71E9F456D009E67A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DB118EA1E9F456D009E67A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DB118EC1E9F456D009E67A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DBAFAC11EB071440009DEEC /* Tan_Notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tan_Notification.entitlements; sourceTree = "<group>"; };
+		8DBAFACF1EB0A3E60009DEEC /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		8DBAFAD11EB0A3E60009DEEC /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		8DE8E1511EB0502E00DD5975 /* Tan_Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_Notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DE8E1541EB0502E00DD5975 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8DE8E1561EB0502E00DD5975 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8DE8E1571EB0502E00DD5975 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8DE8E1591EB0502E00DD5975 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8DE8E15A1EB0502E00DD5975 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8DE8E15D1EB0502E00DD5975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8DE8E15F1EB0502E00DD5975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8DE8E1621EB0502E00DD5975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8DE8E1641EB0502E00DD5975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDDC27441EAF98C900B2B263 /* Tan_Block.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_Block.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDC27471EAF98C900B2B263 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDDC27491EAF98C900B2B263 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +103,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8DB118D51E9F456C009E67A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE8E14E1EB0502E00DD5975 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -106,6 +145,8 @@
 				8DB118DA1E9F456C009E67A8 /* Tan_TestIOS */,
 				8D66ED001EAA071000616746 /* Tan_Swift */,
 				EDDC27451EAF98C900B2B263 /* Tan_Block */,
+				8DE8E1521EB0502E00DD5975 /* Tan_Notification */,
+				8DBAFACE1EB0A3E60009DEEC /* Frameworks */,
 				8DB118D91E9F456C009E67A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +157,7 @@
 				8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */,
 				8D66ECFF1EAA071000616746 /* Tan_Swift.app */,
 				EDDC27441EAF98C900B2B263 /* Tan_Block.app */,
+				8DE8E1511EB0502E00DD5975 /* Tan_Notification.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +184,40 @@
 			isa = PBXGroup;
 			children = (
 				8DB118DC1E9F456C009E67A8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DBAFACE1EB0A3E60009DEEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DBAFACF1EB0A3E60009DEEC /* UserNotifications.framework */,
+				8DBAFAD11EB0A3E60009DEEC /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DE8E1521EB0502E00DD5975 /* Tan_Notification */ = {
+			isa = PBXGroup;
+			children = (
+				8DBAFAC11EB071440009DEEC /* Tan_Notification.entitlements */,
+				8DE8E1561EB0502E00DD5975 /* AppDelegate.h */,
+				8DE8E1571EB0502E00DD5975 /* AppDelegate.m */,
+				8DE8E1591EB0502E00DD5975 /* ViewController.h */,
+				8DE8E15A1EB0502E00DD5975 /* ViewController.m */,
+				8DE8E15C1EB0502E00DD5975 /* Main.storyboard */,
+				8DE8E15F1EB0502E00DD5975 /* Assets.xcassets */,
+				8DE8E1611EB0502E00DD5975 /* LaunchScreen.storyboard */,
+				8DE8E1641EB0502E00DD5975 /* Info.plist */,
+				8DE8E1531EB0502E00DD5975 /* Supporting Files */,
+			);
+			path = Tan_Notification;
+			sourceTree = "<group>";
+		};
+		8DE8E1531EB0502E00DD5975 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8DE8E1541EB0502E00DD5975 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,6 +275,7 @@
 				8DB118D41E9F456C009E67A8 /* Sources */,
 				8DB118D51E9F456C009E67A8 /* Frameworks */,
 				8DB118D61E9F456C009E67A8 /* Resources */,
+				8DBAFAE11EB0A3E60009DEEC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -207,6 +284,23 @@
 			name = Tan_TestIOS;
 			productName = Tan_TestIOS;
 			productReference = 8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8DE8E1501EB0502E00DD5975 /* Tan_Notification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DE8E1671EB0502E00DD5975 /* Build configuration list for PBXNativeTarget "Tan_Notification" */;
+			buildPhases = (
+				8DE8E14D1EB0502E00DD5975 /* Sources */,
+				8DE8E14E1EB0502E00DD5975 /* Frameworks */,
+				8DE8E14F1EB0502E00DD5975 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tan_Notification;
+			productName = Tan_Notification;
+			productReference = 8DE8E1511EB0502E00DD5975 /* Tan_Notification.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EDDC27431EAF98C900B2B263 /* Tan_Block */ = {
@@ -245,6 +339,19 @@
 						DevelopmentTeam = 38ZB8SW96P;
 						ProvisioningStyle = Manual;
 					};
+					8DE8E1501EB0502E00DD5975 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 38ZB8SW96P;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
+					};
 					EDDC27431EAF98C900B2B263 = {
 						CreatedOnToolsVersion = 8.3;
 						ProvisioningStyle = Automatic;
@@ -267,6 +374,7 @@
 				8DB118D71E9F456C009E67A8 /* Tan_TestIOS */,
 				8D66ECFE1EAA071000616746 /* Tan_Swift */,
 				EDDC27431EAF98C900B2B263 /* Tan_Block */,
+				8DE8E1501EB0502E00DD5975 /* Tan_Notification */,
 			);
 		};
 /* End PBXProject section */
@@ -289,6 +397,16 @@
 				8DB118EB1E9F456D009E67A8 /* LaunchScreen.storyboard in Resources */,
 				8DB118E81E9F456D009E67A8 /* Assets.xcassets in Resources */,
 				8DB118E61E9F456D009E67A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE8E14F1EB0502E00DD5975 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DE8E1631EB0502E00DD5975 /* LaunchScreen.storyboard in Resources */,
+				8DE8E1601EB0502E00DD5975 /* Assets.xcassets in Resources */,
+				8DE8E15E1EB0502E00DD5975 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +440,16 @@
 				8DB118E31E9F456D009E67A8 /* ViewController.m in Sources */,
 				8DB118E01E9F456D009E67A8 /* AppDelegate.m in Sources */,
 				8DB118DD1E9F456C009E67A8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE8E14D1EB0502E00DD5975 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DE8E15B1EB0502E00DD5975 /* ViewController.m in Sources */,
+				8DE8E1581EB0502E00DD5975 /* AppDelegate.m in Sources */,
+				8DE8E1551EB0502E00DD5975 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +495,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				8DB118EA1E9F456D009E67A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8DE8E15C1EB0502E00DD5975 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DE8E15D1EB0502E00DD5975 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8DE8E1611EB0502E00DD5975 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DE8E1621EB0502E00DD5975 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -539,6 +683,37 @@
 			};
 			name = Release;
 		};
+		8DE8E1651EB0502E00DD5975 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: you me (C9EZJ36TTC)";
+				DEVELOPMENT_TEAM = 38ZB8SW96P;
+				INFOPLIST_FILE = Tan_Notification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yam.Tan-Notification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "868a0681-71b0-415d-b1ca-e332ad342c43";
+				PROVISIONING_PROFILE_SPECIFIER = Developer_All_Device;
+			};
+			name = Debug;
+		};
+		8DE8E1661EB0502E00DD5975 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 38ZB8SW96P;
+				INFOPLIST_FILE = Tan_Notification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yam.Tan-Notification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "868a0681-71b0-415d-b1ca-e332ad342c43";
+				PROVISIONING_PROFILE_SPECIFIER = Developer_All_Device;
+			};
+			name = Release;
+		};
 		EDDC27581EAF98CA00B2B263 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -595,6 +770,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8DE8E1671EB0502E00DD5975 /* Build configuration list for PBXNativeTarget "Tan_Notification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE8E1651EB0502E00DD5975 /* Debug */,
+				8DE8E1661EB0502E00DD5975 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EDDC275A1EAF98CA00B2B263 /* Build configuration list for PBXNativeTarget "Tan_Block" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -602,6 +786,7 @@
 				EDDC27591EAF98CA00B2B263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
