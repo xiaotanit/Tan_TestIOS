@@ -10,7 +10,8 @@
 
 @interface TestVC ()
 
-@property (nonatomic, weak) NSTimer *timer;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, assign) CFRunLoopRef myRunLoop;
 
 @end
 
@@ -51,6 +52,13 @@
     [clickMeBtn addTarget:self action:@selector(clickMe) forControlEvents:UIControlEventTouchUpInside];
     clickMeBtn.backgroundColor = [UIColor blackColor];
     [redView addSubview:clickMeBtn];
+    
+    
+//    CFRunLoopRef runLoop = CFRunLoopGetCurrent();
+//    self.myRunLoop = runLoop;
+//    NSLog(@"..myRunLoop: %@", self.myRunLoop);
+//    
+////    free(runLoop);
 }
 
 - (void)clickMe{

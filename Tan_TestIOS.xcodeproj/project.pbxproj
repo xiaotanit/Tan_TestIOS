@@ -19,6 +19,7 @@
 		8DB118E61E9F456D009E67A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E41E9F456D009E67A8 /* Main.storyboard */; };
 		8DB118E81E9F456D009E67A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E71E9F456D009E67A8 /* Assets.xcassets */; };
 		8DB118EB1E9F456D009E67A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E91E9F456D009E67A8 /* LaunchScreen.storyboard */; };
+		8DD7A7CC1EB18F15008A3BDA /* comeon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7A7CB1EB18F15008A3BDA /* comeon.jpg */; };
 		8DE8E1551EB0502E00DD5975 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8E1541EB0502E00DD5975 /* main.m */; };
 		8DE8E1581EB0502E00DD5975 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8E1571EB0502E00DD5975 /* AppDelegate.m */; };
 		8DE8E15B1EB0502E00DD5975 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE8E15A1EB0502E00DD5975 /* ViewController.m */; };
@@ -70,6 +71,7 @@
 		8DBAFAC11EB071440009DEEC /* Tan_Notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tan_Notification.entitlements; sourceTree = "<group>"; };
 		8DBAFACF1EB0A3E60009DEEC /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8DBAFAD11EB0A3E60009DEEC /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		8DD7A7CB1EB18F15008A3BDA /* comeon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comeon.jpg; sourceTree = "<group>"; };
 		8DE8E1511EB0502E00DD5975 /* Tan_Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_Notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE8E1541EB0502E00DD5975 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DE8E1561EB0502E00DD5975 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		8DE8E1521EB0502E00DD5975 /* Tan_Notification */ = {
 			isa = PBXGroup;
 			children = (
+				8DD7A7CB1EB18F15008A3BDA /* comeon.jpg */,
 				8DBAFAC11EB071440009DEEC /* Tan_Notification.entitlements */,
 				8DE8E1561EB0502E00DD5975 /* AppDelegate.h */,
 				8DE8E1571EB0502E00DD5975 /* AppDelegate.m */,
@@ -406,6 +409,7 @@
 			files = (
 				8DE8E1631EB0502E00DD5975 /* LaunchScreen.storyboard in Resources */,
 				8DE8E1601EB0502E00DD5975 /* Assets.xcassets in Resources */,
+				8DD7A7CC1EB18F15008A3BDA /* comeon.jpg in Resources */,
 				8DE8E15E1EB0502E00DD5975 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

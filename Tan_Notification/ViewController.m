@@ -34,36 +34,66 @@
 }
 
 - (void)createLatestLocalNotification{
-    // 使用 UNUserNotificationCenter 来管理通知
-    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    //ios 10 本地推送
+    static int i = 0;
+    i +=1;
+    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+    content.title = @"from the earth's notification";
+    content.subtitle = @"to Tan";
+    content.body = [NSString stringWithFormat:@"the beautiful's girl to give you 一共%d条信息!", i];
+    content.badge = @0;
+    content.userInfo = @{@"id":@(88), @"name":@"王大锤", @"email":@"dachui@sina.com", @"content":@"Imagination is more important than knowledge!"};
     
-    //需创建一个包含待通知内容的 UNMutableNotificationContent 对象，注意不是 UNNotificationContent ,此对象为不可变对象。
-    UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
-    content.title = [NSString localizedUserNotificationStringForKey:@"Hello_Title" arguments:nil];
-    content.body = [NSString localizedUserNotificationStringForKey:@"Hello_Message_Body"
-                                                         arguments:nil];
-    content.sound = [UNNotificationSound defaultSound];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"comeon" ofType:@"jpg"];
+    NSError *error = nil;
+    //将本地图片的路径形成一个图片附件，加入到content中
+    UNNotificationAttachment *imgAttach = [UNNotificationAttachment attachmentWithIdentifier:@"att1" URL:[NSURL fileURLWithPath:path] options:nil error:&error];
+    if (error){
+        NSLog(@"异常错误： %@", error);
+    }
+    content.attachments = @[imgAttach];
     
-    content.userInfo = @{@"name":@"王大锤", @"id":@(88), @"age":@(18)};
-    content.subtitle = @"sub标题呢";
-//    content.categoryIdentifier = @"_1_2_tan_test";
+    //设置为@""以后，进入app将没有启动页
+//    content.launchImageName = @"";
     
+    UNNotificationSound *sound = [UNNotificationSound defaultSound];
+    content.sound = sound;
     
+    //设置时间间隔的触发器： 如果需要重复触发通知，时间间隔必须大于60s
+    //例如：[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:70 repeats:YES];
+    UNTimeIntervalNotificationTrigger *timeTrigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10 repeats:NO];
+    NSString *requestIdentifier = @"time interval request";
+    content.categoryIdentifier = @"";
     
-    // 在 alertTime 后推送本地推送
-    UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
-                                                  triggerWithTimeInterval:10 repeats:NO];
-    
-    UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"FiveSecond"
-                                                                          content:content trigger:trigger];
-    
-    //添加推送成功后的处理！
-    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"本地通知" message:@"成功添加推送" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-        [alert addAction:cancelAction];
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:requestIdentifier content:content trigger:timeTrigger];
+    [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        
+        if (error){
+            NSLog(@"碉堡了，有错误： %@", error);
+        }
     }];
+    
+    /*
+     UNUserNotificationCenter通知中心，用以管理通知的注册、权限获取和管理、通知的删除与更新，通过代理分发事件等。
+     UNNotification 通知实体，在UNUserNotificationCenter的代理回调事件中，告知App接收到一条通知，包含一个发起通知的请求UNNotificationRequest
+     UNNotificationRequest包含通知内容UNNotificationContent和触发器UNNotificationTrigger
+     UNNotificationContent 通知内容，通知的title，sound，badge以及相关的图像、声音、视频附件UNNotificationAttachment，触发打开App时候指定的LacnchImage等
+     UNNotificationResponse，用户在触发了按钮或者文本提交的UNNotificationAction的时候，会形成一个response，通过通知中心的代理方法回调给App进行处理或者是交给扩展处理。
+     UNNotificationServiceExtension，是一个在接收到APNs服务器推送过来的数据进行处理的服务扩展，如果App提供了服务扩展，那么APNs下发推送后在通知显示触发之前，会在UNNotificationServiceExtension内接收到，此处有大约30秒的处理时间，开发者可以进行一些数据下载、数据解密、更新等操作，然后交由而后的内容扩展(UNNotificationContentExtension)或者是App进行触发显示
+     UNNotificationCategory,用以定义一组样式类型，该分类包含了某一个通知包含的交互动作的组合，比如说UNNotificationRequest内包含了一个Category标示，那该通知就会以预定义好的交互按钮或者文本框添加到通知实体上。
+     UNNotificationAttachment，通知内容UNNotificationContent包含的附件，一般为图片、视频和音频，虽然iOS10的通知数据容量为4k，但依旧很少，在添加了UNNotificationServiceExtension扩展的情况下，可以在服务里下载图片，生成图片、视频等的本地缓存，UNNotificationAttachment根据缓存数据生成并添加到UNNotificationContent中，交由UI显示
+     UNNotificationAction，是通知中添加的action，展示在通知栏的下方。默认以的button样式展示。有一个文本输入的子类UNTextInputNotificationAction。可以在点击button之后弹出一个键盘，输入信息。用户点击信息和输入的信息可以在UNNotificationResponse中获取
+     
+     
+     
+     ------- 触发器 ----
+     UNPushNotificationTrigger，远程推送触发器，一般是远程推送推过来的通知带有这类触发器
+     UNTimeIntervalNotificationTrigger，时间间隔触发器，定时或者是重复，在本地推送设置中有用
+     UNCalendarNotificationTrigger，日历触发器，指定日期进行通知
+     UNLocationNotificationTrigger，地理位置触发器，指定触发通知的条件是地理位置CLRegion这个类型。
+     触发器和内容最后形成UNNotificationRequest，一个通知请求，本地通知的请求，直接交给通知中心进行发送，发送成功后，该通知会按照触发器的触发条件进行触发，并且会显示到通知中心上，用户可与指定的category交互方式与通知进行交互
+     
+     */
 }
 
 - (void)createLocalNotification{

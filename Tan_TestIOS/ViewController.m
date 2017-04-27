@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField4;
 
 @property (nonatomic, strong) NSTimer *myTimer;
+@property (nonatomic, strong) dispatch_source_t timer2;
 
 @end
 
@@ -43,7 +44,6 @@
     
     NSRunLoop *loop = [NSRunLoop mainRunLoop];
     NSRunLoop *loop2 = [NSRunLoop currentRunLoop];
-    
     NSLog(@"loop.model: %@, loop2.model: %@", loop.currentMode, loop2.currentMode);
     
     //遥远的将来，遥远的过去
@@ -51,7 +51,9 @@
     
     [self testTime1];
     [self testTime2];
-    [self testTime3];
+    [self testTime3];  //测试sche添加时钟器，还是设置三种RunLoop模式
+    [self gcdTimer];    //添加GCD时钟器
+    [self observer];
     
     UIButton *pauseBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 380, 80, 30)];
     pauseBtn.backgroundColor = [UIColor blackColor];
@@ -64,6 +66,8 @@
     [fireBtn setTitle:@"继续" forState:UIControlStateNormal];
     [fireBtn addTarget:self action:@selector(fire) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fireBtn];
+    
+    
 }
 
 /** repeats不管是YES还是NO只执行一次 */
@@ -98,22 +102,162 @@
     self.myTimer = timer;
 }
 
-/** 这种模式创建的时钟器不能设置模式：默认是堵塞模式，可以改成费堵塞模式 */
+/** 这种模式创建的时钟器不能设置模式：默认是堵塞模式，可以改成非堵塞模式 
+ scheduledTimerWithTimeInterval创建的时钟器默认添加到当前RunLoop中，且模式是默认模式
+ */
 - (void)testTime3{
-    //第一种方式
+////    第一种方式
 //    [NSTimer scheduledTimerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-//        [self printInfo:timer];
+//        [self printInfo3];
 //    }];
     
-    //第二种方式
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(printInfo:) userInfo:@"哈哈" repeats:YES];
+//    //第二种方式
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(printInfo3) userInfo:@"哈哈" repeats:YES];
     
 
-    //第三种方式， 手动将NSTimer设置模式
+//    //第三种方式， 手动将NSTimer设置模式
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
         [self printInfo3];
     }];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+    
+    /**  end  **/
+    
+    
+    
+    /** **** start  test 将时钟器添加到两种模式上 验证UITrackingRunLoopMode模式 *****/
+    NSTimer *timer2 = [NSTimer timerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        NSLog(@"test.RunLoop.mode: %@", [NSRunLoop currentRunLoop].currentMode);
+        [self printInfo4];
+        /*
+         打印日志有两个模式（堵塞和非堵塞）：
+         test.RunLoop.mode: UITrackingRunLoopMode
+         test.RunLoop.mode: UITrackingRunLoopMode
+         test.RunLoop.mode: UITrackingRunLoopMode
+         test.RunLoop.mode: kCFRunLoopDefaultMode
+         */
+    }];
+    [[NSRunLoop currentRunLoop] addTimer:timer2 forMode:NSDefaultRunLoopMode]; //默认模式
+    [[NSRunLoop currentRunLoop] addTimer:timer2 forMode:UITrackingRunLoopMode];    //追踪模式
+    /*
+     验证结果：
+     使用timerWithTimeInterval创建的时钟器默认没有任何模式，
+     1、如果手动添加到NSDefaultRunLoopMode模式，则无UI或拖拽事件时调用方法，有UI或拖拽事件停止调用方法
+     2、如果手动添加到UITrackingRunLoopMode模式，则无UI或拖拽事件时不会调用方法，有UI或拖拽事件时调用方法
+     3、如果通知同时添加NSDefaultRunLoopMode和UITrackingRunLoopMode两种模式，则一直会调用方法
+     4、如果只添加到NSRunLoopCommonModes模式，也一直调用方法（其效果相当于NSDefaultRunLoopMode加UITrackingRunLoopMode）
+     
+     如果使用scheduledTimerWithTimeInterval创建时钟器，则默认已经添加到NSDefaultRunLoopMode模式
+     */
+    
+    /** *** end ****/
+    
+    
+    //在子线程添加时钟器，需要让子线程RunLoop运行起来
+    [NSThread detachNewThreadWithBlock:^{
+        NSTimer *timer = [NSTimer timerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//            NSLog(@"run2----------%@",[NSRunLoop currentRunLoop].currentMode);
+            //打印日志： run2----------kCFRunLoopDefaultMode
+        }];
+        
+        NSLog(@"%@",[NSThread currentThread]);
+        NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
+        [currentRunLoop addTimer:timer forMode:NSRunLoopCommonModes];
+        
+        [currentRunLoop run]; //子线程RunLoop默认不运行，需要手动调用
+    }];
+}
+
+/** GCD时钟器 */
+- (void)gcdTimer {
+    /*
+     参数1 : 需要创建的源的种类, timer 也是一种数据源
+     参数2,参数3: 在你创建timer的时候直接传0就可以了
+     参数4: timer触发的代码运行的队列
+     */
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
+    /*
+     参数1 : timer定时器
+     参数2 : 从什么时间开始触发定时器, DISPATCH_TIME_NOW代表现在
+     参数3 : 时间间隔
+     参数4 : 表示精度, 传0表示绝对精准
+     */
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    
+    /*
+     封装timer需要触发的操作
+     */
+    dispatch_source_set_event_handler(timer, ^{
+        static int i = 0;
+        NSLog(@"GCDTimer-----%@, i=%d",[NSThread currentThread], i);
+        NSLog(@"%@",[NSRunLoop currentRunLoop].currentMode);
+        i++;
+        /*
+         GCDTimer-----<NSThread: 0x608000276ec0>{number = 6, name = (null)}, i=15
+         (null)
+         */
+    });
+    dispatch_resume(timer);
+    
+    /*
+     用强指针引用, 防止timer释放
+     */
+    self.timer2 = timer;
+}
+
+/**  */
+- (void)observer {
+    
+    /*
+     参数1 :分配内存空间的方式, 传默认
+     参数2 :RunLoop的运行状态
+     参数3 :是否持续观察
+     参数4 :优先级, 传0
+     参数5 :观察者观测到状态改变时触发的方法
+     */
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(), kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        
+        /*
+         typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
+         kCFRunLoopEntry = (1UL << 0),
+         kCFRunLoopBeforeTimers = (1UL << 1),
+         kCFRunLoopBeforeSources = (1UL << 2),
+         kCFRunLoopBeforeWaiting = (1UL << 5),
+         kCFRunLoopAfterWaiting = (1UL << 6),
+         kCFRunLoopExit = (1UL << 7),
+         kCFRunLoopAllActivities = 0x0FFFFFFFU
+         };
+         */
+        //一直在kCFRunLoopBeforeTimers -> kCFRunLoopBeforeSources -> kCFRunLoopBeforeWaiting -> kCFRunLoopAfterWaiting 四个循环调用
+        switch (activity) {
+            case kCFRunLoopEntry:
+                NSLog(@"即将被唤醒");
+                break;
+            case kCFRunLoopBeforeTimers:
+                NSLog(@"即将处理定时器事件");
+                break;
+            case kCFRunLoopBeforeSources:
+                NSLog(@"即将处理输入源事件");
+                break;
+            case kCFRunLoopBeforeWaiting:
+                NSLog(@"即将进入休眠");
+                break;
+            case kCFRunLoopAfterWaiting:
+                NSLog(@"休眠结束");
+                break;
+            case kCFRunLoopExit:
+                NSLog(@"运行循环退出");
+                break;
+            default:
+                break;
+        }
+    });
+    /*
+     参数1 :运行循环, 传入当前的运行循环
+     参数2 :观察者, 观察运行循环的各种状态
+     参数3 :运行循环的模式
+     */
+    CFRunLoopAddObserver(CFRunLoopGetCurrent(),observer, kCFRunLoopDefaultMode);
 }
 
 /** 暂停 */
