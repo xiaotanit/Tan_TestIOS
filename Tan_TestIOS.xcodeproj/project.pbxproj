@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D5A4E2B1EA8DAB300F048E7 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5A4E2A1EA8DAB300F048E7 /* TestVC.m */; };
+		8D1A1B5F1EB2DEBD00853852 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B5A1EB2DEBD00853852 /* TestVC.m */; };
+		8D1A1B641EB2E30400853852 /* TestFMDBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B631EB2E30400853852 /* TestFMDBVC.m */; };
+		8D1A1B6F1EB2E68B00853852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B6A1EB2E68B00853852 /* AppDelegate.m */; };
+		8D1A1B701EB2E68B00853852 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B6C1EB2E68B00853852 /* BaseVC.m */; };
+		8D1A1B711EB2E68B00853852 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B6E1EB2E68B00853852 /* ViewController.m */; };
+		8D1A1B931EB2E6ED00853852 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B881EB2E6ED00853852 /* FMDatabase.m */; };
+		8D1A1B941EB2E6ED00853852 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B8A1EB2E6ED00853852 /* FMDatabaseAdditions.m */; };
+		8D1A1B951EB2E6ED00853852 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B8C1EB2E6ED00853852 /* FMDatabasePool.m */; };
+		8D1A1B961EB2E6ED00853852 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B8E1EB2E6ED00853852 /* FMDatabaseQueue.m */; };
+		8D1A1B971EB2E6ED00853852 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B911EB2E6ED00853852 /* FMResultSet.m */; };
+		8D1A1B9A1EB2E77300853852 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1A1B991EB2E77300853852 /* libsqlite3.tbd */; };
 		8D66ED021EAA071000616746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66ED011EAA071000616746 /* AppDelegate.swift */; };
 		8D66ED041EAA071000616746 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66ED031EAA071000616746 /* ViewController.swift */; };
 		8D66ED071EAA071000616746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED051EAA071000616746 /* Main.storyboard */; };
 		8D66ED091EAA071000616746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED081EAA071000616746 /* Assets.xcassets */; };
 		8D66ED0C1EAA071000616746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED0A1EAA071000616746 /* LaunchScreen.storyboard */; };
 		8DB118DD1E9F456C009E67A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118DC1E9F456C009E67A8 /* main.m */; };
-		8DB118E01E9F456D009E67A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118DF1E9F456D009E67A8 /* AppDelegate.m */; };
-		8DB118E31E9F456D009E67A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118E21E9F456D009E67A8 /* ViewController.m */; };
 		8DB118E61E9F456D009E67A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E41E9F456D009E67A8 /* Main.storyboard */; };
 		8DB118E81E9F456D009E67A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E71E9F456D009E67A8 /* Assets.xcassets */; };
 		8DB118EB1E9F456D009E67A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E91E9F456D009E67A8 /* LaunchScreen.storyboard */; };
@@ -49,8 +57,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8D5A4E291EA8DAB300F048E7 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
-		8D5A4E2A1EA8DAB300F048E7 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		8D1A1B591EB2DEBD00853852 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		8D1A1B5A1EB2DEBD00853852 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		8D1A1B621EB2E30400853852 /* TestFMDBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFMDBVC.h; sourceTree = "<group>"; };
+		8D1A1B631EB2E30400853852 /* TestFMDBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFMDBVC.m; sourceTree = "<group>"; };
+		8D1A1B691EB2E68B00853852 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8D1A1B6A1EB2E68B00853852 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8D1A1B6B1EB2E68B00853852 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		8D1A1B6C1EB2E68B00853852 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		8D1A1B6D1EB2E68B00853852 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8D1A1B6E1EB2E68B00853852 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8D1A1B871EB2E6ED00853852 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		8D1A1B881EB2E6ED00853852 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		8D1A1B891EB2E6ED00853852 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		8D1A1B8A1EB2E6ED00853852 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		8D1A1B8B1EB2E6ED00853852 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		8D1A1B8C1EB2E6ED00853852 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		8D1A1B8D1EB2E6ED00853852 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8D1A1B8E1EB2E6ED00853852 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8D1A1B8F1EB2E6ED00853852 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8D1A1B901EB2E6ED00853852 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8D1A1B911EB2E6ED00853852 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		8D1A1B991EB2E77300853852 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8D66ECFF1EAA071000616746 /* Tan_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D66ED011EAA071000616746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D66ED031EAA071000616746 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,10 +88,6 @@
 		8D66ED0D1EAA071000616746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_TestIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB118DC1E9F456C009E67A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8DB118DE1E9F456D009E67A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8DB118DF1E9F456D009E67A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8DB118E11E9F456D009E67A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DB118E21E9F456D009E67A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8DB118E51E9F456D009E67A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DB118E71E9F456D009E67A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DB118EA1E9F456D009E67A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D1A1B9A1EB2E77300853852 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +153,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D1A1B551EB2DEBD00853852 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				8D1A1B681EB2E68B00853852 /* Base */,
+				8D1A1B581EB2DEBD00853852 /* RunLoop */,
+				8D1A1B5B1EB2DEBD00853852 /* TestFMDB */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		8D1A1B581EB2DEBD00853852 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				8D1A1B591EB2DEBD00853852 /* TestVC.h */,
+				8D1A1B5A1EB2DEBD00853852 /* TestVC.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		8D1A1B5B1EB2DEBD00853852 /* TestFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				8D1A1B621EB2E30400853852 /* TestFMDBVC.h */,
+				8D1A1B631EB2E30400853852 /* TestFMDBVC.m */,
+			);
+			path = TestFMDB;
+			sourceTree = "<group>";
+		};
+		8D1A1B611EB2E22C00853852 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				8DB118E41E9F456D009E67A8 /* Main.storyboard */,
+				8DB118E71E9F456D009E67A8 /* Assets.xcassets */,
+				8DB118E91E9F456D009E67A8 /* LaunchScreen.storyboard */,
+				8DB118EC1E9F456D009E67A8 /* Info.plist */,
+				8DB118DB1E9F456C009E67A8 /* Supporting Files */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		8D1A1B681EB2E68B00853852 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8D1A1B691EB2E68B00853852 /* AppDelegate.h */,
+				8D1A1B6A1EB2E68B00853852 /* AppDelegate.m */,
+				8D1A1B6B1EB2E68B00853852 /* BaseVC.h */,
+				8D1A1B6C1EB2E68B00853852 /* BaseVC.m */,
+				8D1A1B6D1EB2E68B00853852 /* ViewController.h */,
+				8D1A1B6E1EB2E68B00853852 /* ViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8D1A1B721EB2E6A700853852 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				8D1A1B861EB2E6ED00853852 /* FMDB */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		8D1A1B861EB2E6ED00853852 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				8D1A1B871EB2E6ED00853852 /* FMDatabase.h */,
+				8D1A1B881EB2E6ED00853852 /* FMDatabase.m */,
+				8D1A1B891EB2E6ED00853852 /* FMDatabaseAdditions.h */,
+				8D1A1B8A1EB2E6ED00853852 /* FMDatabaseAdditions.m */,
+				8D1A1B8B1EB2E6ED00853852 /* FMDatabasePool.h */,
+				8D1A1B8C1EB2E6ED00853852 /* FMDatabasePool.m */,
+				8D1A1B8D1EB2E6ED00853852 /* FMDatabaseQueue.h */,
+				8D1A1B8E1EB2E6ED00853852 /* FMDatabaseQueue.m */,
+				8D1A1B8F1EB2E6ED00853852 /* FMDB.h */,
+				8D1A1B901EB2E6ED00853852 /* FMResultSet.h */,
+				8D1A1B911EB2E6ED00853852 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		8D66ED001EAA071000616746 /* Tan_Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,17 +271,9 @@
 		8DB118DA1E9F456C009E67A8 /* Tan_TestIOS */ = {
 			isa = PBXGroup;
 			children = (
-				8DB118DE1E9F456D009E67A8 /* AppDelegate.h */,
-				8DB118DF1E9F456D009E67A8 /* AppDelegate.m */,
-				8DB118E11E9F456D009E67A8 /* ViewController.h */,
-				8DB118E21E9F456D009E67A8 /* ViewController.m */,
-				8DB118E41E9F456D009E67A8 /* Main.storyboard */,
-				8DB118E71E9F456D009E67A8 /* Assets.xcassets */,
-				8DB118E91E9F456D009E67A8 /* LaunchScreen.storyboard */,
-				8DB118EC1E9F456D009E67A8 /* Info.plist */,
-				8DB118DB1E9F456C009E67A8 /* Supporting Files */,
-				8D5A4E291EA8DAB300F048E7 /* TestVC.h */,
-				8D5A4E2A1EA8DAB300F048E7 /* TestVC.m */,
+				8D1A1B721EB2E6A700853852 /* Lib */,
+				8D1A1B611EB2E22C00853852 /* Other */,
+				8D1A1B551EB2DEBD00853852 /* Class */,
 			);
 			path = Tan_TestIOS;
 			sourceTree = "<group>";
@@ -193,6 +289,7 @@
 		8DBAFACE1EB0A3E60009DEEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D1A1B991EB2E77300853852 /* libsqlite3.tbd */,
 				8DBAFACF1EB0A3E60009DEEC /* UserNotifications.framework */,
 				8DBAFAD11EB0A3E60009DEEC /* UserNotificationsUI.framework */,
 			);
@@ -440,10 +537,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D5A4E2B1EA8DAB300F048E7 /* TestVC.m in Sources */,
-				8DB118E31E9F456D009E67A8 /* ViewController.m in Sources */,
-				8DB118E01E9F456D009E67A8 /* AppDelegate.m in Sources */,
+				8D1A1B711EB2E68B00853852 /* ViewController.m in Sources */,
+				8D1A1B5F1EB2DEBD00853852 /* TestVC.m in Sources */,
 				8DB118DD1E9F456C009E67A8 /* main.m in Sources */,
+				8D1A1B931EB2E6ED00853852 /* FMDatabase.m in Sources */,
+				8D1A1B951EB2E6ED00853852 /* FMDatabasePool.m in Sources */,
+				8D1A1B961EB2E6ED00853852 /* FMDatabaseQueue.m in Sources */,
+				8D1A1B641EB2E30400853852 /* TestFMDBVC.m in Sources */,
+				8D1A1B6F1EB2E68B00853852 /* AppDelegate.m in Sources */,
+				8D1A1B971EB2E6ED00853852 /* FMResultSet.m in Sources */,
+				8D1A1B701EB2E68B00853852 /* BaseVC.m in Sources */,
+				8D1A1B941EB2E6ED00853852 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
