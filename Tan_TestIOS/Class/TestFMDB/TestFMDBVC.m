@@ -11,9 +11,10 @@
 
 @interface TestFMDBVC () <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, copy) NSString *filePath;  //数据库文件路径
+@property (nonatomic, strong) FMDatabaseQueue *dbQueue;  //数据库队列
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) FMDatabase *db;
-@property (nonatomic, strong) FMDatabaseQueue *dbQueue;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 
 @end
@@ -27,21 +28,9 @@
     [self selectAllData:nil]; //查询所有数据
 }
 
-/** 获取数据库文件: 如果已经存在则获取该数据库；不存在则创建数据库 */
-- (FMDatabase *)db{
-    if (_db == nil){
-        NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES).firstObject;
-        NSString *filePath = [path stringByAppendingPathComponent:@"Tan_FMDB.db"];
-        
-        NSLog(@"filePath: %@", filePath);
-        
-        //    self.db = [[FMDatabase alloc] initWithPath:filePath];
-        _db = [FMDatabase databaseWithPath:filePath];
-    }
-    
-    if (![_db open]) [_db open];
-    
-    return _db;
+- (NSString *)filePath{
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES).firstObject;
+    return [path stringByAppendingPathComponent:@"Tan_FMDB.db"];
 }
 
 - (FMDatabaseQueue *)dbQueue{
@@ -54,15 +43,6 @@
     return _dbQueue;
 }
 
-- (FMDatabase *)getDB{
-    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES).firstObject;
-    NSString *filePath = [path stringByAppendingPathComponent:@"Tan_FMDB.db"];
-    
-    NSLog(@"filePath: %@", filePath);
-    
-    //    self.db = [[FMDatabase alloc] initWithPath:filePath];
-    return [FMDatabase databaseWithPath:filePath];
-}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -85,34 +65,24 @@
 }
 
 #pragma action
-/** 打开数据库 */
-- (IBAction)openDB:(id)sender{
-    [self.db open];
-}
-
-/** 关闭数据库 */
-- (IBAction)closeDB:(id)sender{
-    [self.db close];
-}
-
 /** 创建数据表 */
 - (IBAction)createTable:(id)sender{
-    [self createTableWithDataBase:self.db];
+    [self createTableWithDataBase:nil];
 }
 
 /** 一般性插入1w条数据 */
 - (IBAction)insertNormalData:(UIButton *)sender{
-    [self insertDataWithDataBase:self.db];
+    [self insertDataWithDataBase:nil];
 }
 
 /** 查询所有数据 */
 - (IBAction)selectAllData:(id)sender{
-    [self selectDataWithDataBase:self.db];
+    [self selectDataWithDataBase:nil];
 }
 
 /** 删除所有数据 */
 - (IBAction)deleAllData:(id)sender{
-    [self deleteDataWithDataBase:self.db];
+    [self deleteDataWithDataBase:nil];
 }
 
 /** 事务插入1w条数据
@@ -120,35 +90,39 @@
  使用事务插入1w条数据耗时不到1s
  */
 - (IBAction)insertTransactionData:(id)sender{
-    if (![self.db tableExists:@"tbl_Person"]){
-        [self createTableWithDataBase:self.db];
-    }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSLog(@"...start insert: %@", [NSDate date]);
         NSDate *startDate = [NSDate date];
-        int alreadyDataCount = [self getDataCount:self.db];
+        int alreadyDataCount = [self getDataCount:nil];
         
-        [self.db beginTransaction]; //开启事务
+        FMDatabase *db = [FMDatabase databaseWithPath:self.filePath];
         
-        for (int i = alreadyDataCount; i < alreadyDataCount+10000; i++) {
-            NSString *name = [NSString stringWithFormat:@"%@%d", [self getPersonName], i];
-            NSString *email = [NSString stringWithFormat:@"e%d%@", i, [self getEmail]];
-            int age = 18 + arc4random_uniform(100);
-            float experience = arc4random_uniform(20)/3.0;
-            NSString *address = [self getAddress];
-            NSNumber *time = @([[NSDate date] timeIntervalSince1970]);
+        if ([db open]){
+            [db beginTransaction]; //开启事务
             
-            NSString *sql = @"insert into tbl_Person (name, email, age, experience, address, createtime) values(?, ?, ?, ?, ?, ?)";
-            BOOL isOK = [self.db executeUpdate:sql withArgumentsInArray:@[name, email, @(age), @(experience), address, time]];
-            
-            if (!isOK){
-                [self.db rollback]; //事务回滚
-                return;
+            for (int i = alreadyDataCount; i < alreadyDataCount+10000; i++) {
+                NSString *name = [NSString stringWithFormat:@"%@%d", [self getPersonName], i];
+                NSString *email = [NSString stringWithFormat:@"e%d%@", i, [self getEmail]];
+                int age = 18 + arc4random_uniform(100);
+                float experience = arc4random_uniform(20)/3.0;
+                NSString *address = [self getAddress];
+                NSNumber *time = @([[NSDate date] timeIntervalSince1970]);
+                
+                NSString *sql = @"insert into tbl_Person (name, email, age, experience, address, createtime) values(?, ?, ?, ?, ?, ?)";
+                BOOL isOK = [db executeUpdate:sql withArgumentsInArray:@[name, email, @(age), @(experience), address, time]];
+                
+                if (!isOK){
+                    [db rollback]; //事务回滚
+                    [db close];
+                    return;
+                }
             }
+            
+            [db commit]; //提交事务
+            [db close];
         }
         
-        [self.db commit]; //提交事务
         NSLog(@"...end insert: %@", [NSDate date]);
         NSInteger marginSecond = [[NSDate date] timeIntervalSinceDate:startDate];
         
@@ -174,176 +148,220 @@
 
 /** 删除数据表 */
 - (IBAction)deleteTable:(id)sender{
-    [self deleteTableWithDataBase:self.db];
+    [self deleteTableWithDataBase:nil];
 }
 
 
 /** 非线程安全增删查改 */
 -(IBAction)noSafetyTest:(id)sender{
-    @try {
-        [self insertDataWithDataBase:self.db];
-        [self insertTransactionData:nil];
-        [self selectDataWithDataBase:self.db];
-        [self deleteDataWithDataBase:self.db];
-        [self deleteTableWithDataBase:self.db];
-    
-    } @catch (NSException *exception) {
-        [self showAlertMsg:[NSString stringWithFormat:@"非线程安全异常：%@", exception.reason] withBlock:^{
-            [self selectDataWithDataBase:self.db];
-        }];
-    } @finally {
-        
-    }
+    [self insertDataWithDataBase:nil];
+    [self deleteDataWithDataBase:nil];
+    [self deleteTableWithDataBase:nil];
+    [self insertDataWithDataBase:nil];
 }
 /** 线程安全增删查改： 感觉这个线程安全和非线程安全没有什么区别啊 */
 - (IBAction)safetyTest:(id)sender{
-    @try {
-        [self.dbQueue inDatabase:^(FMDatabase *db) {
-            [self insertDataWithDataBase:self.db];
-            [self insertTransactionData:nil];
-            [self selectDataWithDataBase:self.db];
-            [self deleteDataWithDataBase:self.db];
-            [self deleteTableWithDataBase:self.db];
-        }];
-    } @catch (NSException *exception) {
-        [self showAlertMsg:[NSString stringWithFormat:@"线程安全异常：%@", exception.reason] withBlock:^{
-            [self selectDataWithDataBase:self.db];
-        }];
-    } @finally {
-        
-    }
+//    dispatch_queue_t q1 = dispatch_queue_create("queue1", NULL);
+//    
+//    dispatch_async(q1, ^{
+//        [self.dbQueue inDatabase:^(FMDatabase *db) {
+//            NSLog(@"..1111: %@", [NSThread currentThread]);
+//            [self insertDataWithDataBase:db];
+//        }];
+//    });
+//    
+//    dispatch_async(dispatch_queue_create("queue2", NULL), ^{
+//        [self.dbQueue inDatabase:^(FMDatabase *db) {
+//            NSLog(@"..2222: %@", [NSThread currentThread]);
+//            [self deleteDataWithDataBase:db];
+//        }];
+//    });
+//    
+//    dispatch_async(dispatch_queue_create("queue3", NULL), ^{
+//        [self.dbQueue inDatabase:^(FMDatabase *db) {
+//            NSLog(@"..3333: %@", [NSThread currentThread]);
+//            [self deleteTableWithDataBase:db];
+//        }];
+//    });
+//    
+//    dispatch_async(dispatch_queue_create("queue4", NULL), ^{
+//        [self.dbQueue inDatabase:^(FMDatabase *db) {
+//            NSLog(@"..4444: %@", [NSThread currentThread]);
+//            [self insertDataWithDataBase:db];
+//        }];
+//    });
 }
 
 
 - (IBAction)safetyTransationInsert:(UIButton *)sender{
     
-    [self.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+    [self checkTableIsExist:nil];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        NSLog(@"...start insert: %@", [NSDate date]);
+        NSDate *startDate = [NSDate date];
+        int alreadyDataCount = [self getDataCount:nil];
+        
+        [self.dbQueue inDatabase:^(FMDatabase *db) {
+            if ([db open]){
+                [db beginTransaction];
+                for (int i = alreadyDataCount; i < alreadyDataCount+10000; i++) {
+                    NSString *name = [NSString stringWithFormat:@"%@%d", [self getPersonName], i];
+                    NSString *email = [NSString stringWithFormat:@"e%d%@", i, [self getEmail]];
+                    int age = 18 + arc4random_uniform(100);
+                    float experience = arc4random_uniform(20)/3.0;
+                    NSString *address = [self getAddress];
+                    NSNumber *time = @([[NSDate date] timeIntervalSince1970]);
+                    
+                    NSString *sql = @"insert into tbl_Person (name, email, age, experience, address, createtime) values(?, ?, ?, ?, ?, ?)";
+                    BOOL isOK = [db executeUpdate:sql withArgumentsInArray:@[name, email, @(age), @(experience), address, time]];
+                    
+                    if (!isOK){
+                        [db rollback];
+                        [db close];
+                        return;
+                    }
+                }
+                [db commit];
+                [db close];
+            }
+        }];
+         
+        NSLog(@"...end insert: %@", [NSDate date]);
+        NSInteger marginSecond = [[NSDate date] timeIntervalSinceDate:startDate];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *alertMsg = [NSString stringWithFormat:@"使用事务插入1w条数据共用时：%d秒", (int)marginSecond];
+            
+            [self showAlertMsg:alertMsg withBlock:^{
+                [self selectDataWithDataBase:nil];
+            }];
+        });
+    });
+}
+
+- (void)checkTableIsExist:(FMDatabase *)db{
+    
+    if (db == nil) db = [FMDatabase databaseWithPath:self.filePath];
+
+    if ([db open]){
         if (![db tableExists:@"tbl_Person"]){
             [self createTableWithDataBase:db];
         }
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-            NSLog(@"...start insert: %@", [NSDate date]);
-            NSDate *startDate = [NSDate date];
-            int alreadyDataCount = [self getDataCount:db];
-            
-            for (int i = alreadyDataCount; i < alreadyDataCount+10000; i++) {
-                NSString *name = [NSString stringWithFormat:@"%@%d", [self getPersonName], i];
-                NSString *email = [NSString stringWithFormat:@"e%d%@", i, [self getEmail]];
-                int age = 18 + arc4random_uniform(100);
-                float experience = arc4random_uniform(20)/3.0;
-                NSString *address = [self getAddress];
-                NSNumber *time = @([[NSDate date] timeIntervalSince1970]);
-                
-                NSString *sql = @"insert into tbl_Person (name, email, age, experience, address, createtime) values(?, ?, ?, ?, ?, ?)";
-                BOOL isOK = [db executeUpdate:sql withArgumentsInArray:@[name, email, @(age), @(experience), address, time]];
-                
-                if (!isOK){
-                    *rollback = YES;
-                    return;
-                }
-            }
-            NSLog(@"...end insert: %@", [NSDate date]);
-            NSInteger marginSecond = [[NSDate date] timeIntervalSinceDate:startDate];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSString *alertMsg = [NSString stringWithFormat:@"使用事务插入1w条数据共用时：%d秒", (int)marginSecond];
-                
-                [self showAlertMsg:alertMsg withBlock:^{
-                    [self selectDataWithDataBase:db];
-                }];
-            });
-        });
-    }];
+    }
+    
+    [db close];
 }
-
 
 /** 创建数据表 */
 - (void)createTableWithDataBase:(FMDatabase *)db{
-    NSString *sql = @"create table if not exists tbl_Person(\
-    id integer primary key,\
-    name text not null,\
-    email text not null,\
-    age integer check (age >= 18 & age < 120),\
-    experience real default 0.0,\
-    address text default '',\
-    createtime integer default 0\
-    )";
     
-    if (![db executeUpdate:sql]){
-        NSLog(@"create table fail ！");
-    }
-    else{
-        NSLog(@"success create table ^_^");
+    if (db == nil) db = [FMDatabase databaseWithPath:self.filePath];
+    
+    if ([db open]){
+        NSString *sql = @"create table if not exists tbl_Person(\
+        id integer primary key,\
+        name text not null,\
+        email text not null,\
+        age integer check (age >= 18 & age < 120),\
+        experience real default 0.0,\
+        address text default '',\
+        createtime integer default 0\
+        )";
+        
+        if (![db executeUpdate:sql]){
+            NSLog(@"create table fail ！");
+        }
+        else{
+            NSLog(@"success create table ^_^");
+        }
+        [db close];
     }
 }
 /** 删除表 */
 - (void)deleteTableWithDataBase:(FMDatabase *)db{
-    if (![db tableExists:@"tbl_Person"]) return;
     
-    NSString *sql = @"drop table tbl_Person";
+    if (db == nil) db = [FMDatabase databaseWithPath:self.filePath];
     
-    if (![db executeUpdate:sql]){
-        NSLog(@"drop table fail ！");
-    }
-    else{
-        NSLog(@"drop table .success .");
-        [self.dataArr removeAllObjects];
-        [self.tableView reloadData];
+    if ([db open]){
+        NSString *sql = @"drop table tbl_Person";
+        
+        if (![db executeUpdate:sql]){
+            NSLog(@"drop table fail ！");
+        }
+        else{
+            NSLog(@"drop table .success .");
+            [self.dataArr removeAllObjects];
+            [self.tableView reloadData];
+        }
+        [db close];
     }
 }
 /** 删除数据 */
 - (void)deleteDataWithDataBase:(FMDatabase *)db{
-    if (![db tableExists:@"tbl_Person"]) return;
     
-    NSString *str = @"delete all Data success ^_^";
-    if (![db executeUpdate:@"delete from tbl_Person"]){
-        str = @"delete all data fail ! ";
+    if (db == nil) db = [FMDatabase databaseWithPath:self.filePath];
+    
+    if ([db open]){
+        NSString *str = @"delete all Data success ^_^";
+        if (![db executeUpdate:@"delete from tbl_Person"]){
+            str = @"delete all data fail ! ";
+        }
+        
+        [self showAlertMsg:str withBlock:^{
+            [self.dataArr removeAllObjects];
+            [self.tableView reloadData];
+        }];
+        [db close];
     }
-    
-    [self showAlertMsg:str withBlock:^{
-        [self.dataArr removeAllObjects];
-        [self.tableView reloadData];
-    }];
 }
 /** 查询数据 */
 - (void)selectDataWithDataBase:(FMDatabase *)db{
-    if (![db tableExists:@"tbl_Person"]){
-        [self createTableWithDataBase:db];
-    }
+    
+    if (db == nil) db = [FMDatabase databaseWithPath:self.filePath];
+    
+    [self checkTableIsExist:db];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        //执行查询SQL语句，返回查询结果
-        FMResultSet *result = [db executeQuery: @"select * from tbl_Person"];
-        
-        NSLog(@"多少列：%d", [result columnCount]);
-        
-        /* 等效写法
-         //        NSError *er;
-         //        FMResultSet *rs1 = [self.db executeQuery:@"select * from tbl_Person where 1=?" values:@[@1] error:&er];
-         //        NSLog(@"rs1.column: %d", [rs1 columnCount]);
-         //        if (er){
-         //            NSLog(@"er is err: %@", er);
-         //        }
-         //
-         //        FMResultSet *rs2 = [self.db executeQueryWithFormat:@"select * from tbl_Person where 1=%d", 1];
-         //        NSLog(@"rs2.column: %d", [rs2 columnCount]);
-         //
-         //        FMResultSet *rs3 = [self.db executeQuery:@"select * from tbl_Person where 1=?" withArgumentsInArray:@[@1]];
-         //        NSLog(@"rs3.column: %d", [rs3 columnCount]);
-         
-         //        FMResultSet *rs4 = [self.db executeQuery:@"select * from tbl_Person where 1=?", @(1)];
-         //        NSLog(@"rs4.column: %d", [rs4 columnCount]);
-         */
         
         NSMutableArray *array = [NSMutableArray array];
-        //获取查询结果的下一个记录
-        while ([result next]) {
-            NSDictionary *dict = [result resultDictionary];
-            [array addObject:dict];
+        
+        if ([db open]){
+            //执行查询SQL语句，返回查询结果
+            FMResultSet *result = [db executeQuery: @"select * from tbl_Person"];
+            
+            NSLog(@"多少列：%d", [result columnCount]);
+            
+            /* 等效写法
+             //        NSError *er;
+             //        FMResultSet *rs1 = [self.db executeQuery:@"select * from tbl_Person where 1=?" values:@[@1] error:&er];
+             //        NSLog(@"rs1.column: %d", [rs1 columnCount]);
+             //        if (er){
+             //            NSLog(@"er is err: %@", er);
+             //        }
+             //
+             //        FMResultSet *rs2 = [self.db executeQueryWithFormat:@"select * from tbl_Person where 1=%d", 1];
+             //        NSLog(@"rs2.column: %d", [rs2 columnCount]);
+             //
+             //        FMResultSet *rs3 = [self.db executeQuery:@"select * from tbl_Person where 1=?" withArgumentsInArray:@[@1]];
+             //        NSLog(@"rs3.column: %d", [rs3 columnCount]);
+             
+             //        FMResultSet *rs4 = [self.db executeQuery:@"select * from tbl_Person where 1=?", @(1)];
+             //        NSLog(@"rs4.column: %d", [rs4 columnCount]);
+             */
+            
+            
+            //获取查询结果的下一个记录
+            while ([result next]) {
+                NSDictionary *dict = [result resultDictionary];
+                [array addObject:dict];
+            }
+            [result close];
+            [db close];
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             [self.dataArr removeAllObjects];
             [self.dataArr addObjectsFromArray:array];
             
@@ -352,6 +370,7 @@
             [self.tableView reloadData];
         });
     });
+    
     /*
      // 执行查询SQL语句，返回FMResultSet查询结果
      - (FMResultSet *)executeQuery:(NSString*)sql, ... ;
@@ -397,26 +416,30 @@
 }
 - (void)insertDataWithDataBase:(FMDatabase *)db{
     
-    if (![db tableExists:@"tbl_Person"]){
-        [self createTableWithDataBase:db];
-    }
+    if (db == nil) db = [FMDatabase databaseWithPath:self.filePath];
+    
+    [self checkTableIsExist:db];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSLog(@"...start insert: %@", [NSDate date]);
         NSDate *startDate = [NSDate date];
         int alreadyDataCount = [self getDataCount:db];
         
-        for (int i = alreadyDataCount; i < alreadyDataCount+10000; i++) {
-            NSString *name = [NSString stringWithFormat:@"%@%d", [self getPersonName], i];
-            NSString *email = [NSString stringWithFormat:@"e%d%@", i, [self getEmail]];
-            int age = 18 + arc4random_uniform(100);
-            float experience = arc4random_uniform(20)/3.0;
-            NSString *address = [self getAddress];
-            NSNumber *time = @([[NSDate date] timeIntervalSince1970]);
-            
-            NSString *sql = @"insert into tbl_Person (name, email, age, experience, address, createtime) values(?, ?, ?, ?, ?, ?)";
-            [db executeUpdate:sql withArgumentsInArray:@[name, email, @(age), @(experience), address, time]];
+        if ([db open]){
+            for (int i = alreadyDataCount; i < alreadyDataCount+10000; i++) {
+                NSString *name = [NSString stringWithFormat:@"%@%d", [self getPersonName], i];
+                NSString *email = [NSString stringWithFormat:@"e%d%@", i, [self getEmail]];
+                int age = 18 + arc4random_uniform(100);
+                float experience = arc4random_uniform(20)/3.0;
+                NSString *address = [self getAddress];
+                NSNumber *time = @([[NSDate date] timeIntervalSince1970]);
+                
+                NSString *sql = @"insert into tbl_Person (name, email, age, experience, address, createtime) values(?, ?, ?, ?, ?, ?)";
+                [db executeUpdate:sql withArgumentsInArray:@[name, email, @(age), @(experience), address, time]];
+            }
+            [db close];
         }
+        
         
         NSLog(@"...end insert: %@", [NSDate date]);
         NSInteger marginSecond = [[NSDate date] timeIntervalSinceDate:startDate];
@@ -425,10 +448,11 @@
             NSString *alertMsg = [NSString stringWithFormat:@"插入1w条数据共用时：%d秒", (int)marginSecond];
             
             [self showAlertMsg:alertMsg withBlock:^{
-                [self createTableWithDataBase:db];
+                [self selectDataWithDataBase:db];
             }];
         });
     });
+    
     /*
      //四种写法
      [database executeUpdate:@"insert into tbl_Person(num,name,sex) values(0,'liuting','m');"];
@@ -444,20 +468,28 @@
 /** 获取数据库多少条数据 */
 - (int)getDataCount:(FMDatabase *)db{
     
-    if (![db tableExists:@"tbl_Person"]){
-        [self createTableWithDataBase:db];
+    if (db == nil) db = [FMDatabase databaseWithPath:self.filePath];
+    
+    [self checkTableIsExist:db];
+    
+    if ([db open]){
+        FMResultSet *result2 = [db executeQueryWithFormat:@"select count(1) from tbl_Person where 1=%d", 1];
+        if ([result2 next]){
+            NSLog(@"...一共多少条数据： %d", [result2 intForColumnIndex:0]);
+        }
+        [result2 close];
+        
+        FMResultSet *result = [db executeQuery:@"select count(1) from tbl_Person"];
+        int count = 0;
+        
+        if ([result next]) {
+            count = [result intForColumnIndex:0];
+        }
+        [result close];
+        [db close];
+        return count;
     }
     
-    FMResultSet *result2 = [db executeQueryWithFormat:@"select count(1) from tbl_Person where 1=%d", 1];
-    if ([result2 next]){
-        NSLog(@"...一共多少条数据： %d", [result2 intForColumnIndex:0]);
-    }
-    
-    FMResultSet *result = [db executeQuery:@"select count(1) from tbl_Person"];
-    
-    if ([result next]) {
-        return [result intForColumnIndex:0];
-    }
     return 0;
 }
 
@@ -495,11 +527,6 @@
 }
 
 - (void)dealloc{
-    //关闭数据库
-    if (![self.db close]){
-        NSLog(@"close database fail ! ");
-    }
-    
     NSLog(@"控制器被销毁： %@", self);
 }
 
