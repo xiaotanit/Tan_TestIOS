@@ -23,6 +23,11 @@
 		8D66ED071EAA071000616746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED051EAA071000616746 /* Main.storyboard */; };
 		8D66ED091EAA071000616746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED081EAA071000616746 /* Assets.xcassets */; };
 		8D66ED0C1EAA071000616746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED0A1EAA071000616746 /* LaunchScreen.storyboard */; };
+		8D7FCF301EB88560004F4AEC /* TestAudioVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FCF2F1EB88560004F4AEC /* TestAudioVC.m */; };
+		8D7FCF3E1EB8883F004F4AEC /* qishiwang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FCF3A1EB8883F004F4AEC /* qishiwang.mp3 */; };
+		8D7FCF3F1EB8883F004F4AEC /* temp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FCF3B1EB8883F004F4AEC /* temp.wav */; };
+		8D7FCF401EB8883F004F4AEC /* videoRing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FCF3C1EB8883F004F4AEC /* videoRing.caf */; };
+		8D7FCF411EB8883F004F4AEC /* wxFile.pcm in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FCF3D1EB8883F004F4AEC /* wxFile.pcm */; };
 		8DB118DD1E9F456C009E67A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB118DC1E9F456C009E67A8 /* main.m */; };
 		8DB118E61E9F456D009E67A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E41E9F456D009E67A8 /* Main.storyboard */; };
 		8DB118E81E9F456D009E67A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB118E71E9F456D009E67A8 /* Assets.xcassets */; };
@@ -86,6 +91,12 @@
 		8D66ED081EAA071000616746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D66ED0B1EAA071000616746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D66ED0D1EAA071000616746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D7FCF2E1EB88560004F4AEC /* TestAudioVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAudioVC.h; sourceTree = "<group>"; };
+		8D7FCF2F1EB88560004F4AEC /* TestAudioVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAudioVC.m; sourceTree = "<group>"; };
+		8D7FCF3A1EB8883F004F4AEC /* qishiwang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = qishiwang.mp3; sourceTree = "<group>"; };
+		8D7FCF3B1EB8883F004F4AEC /* temp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = temp.wav; sourceTree = "<group>"; };
+		8D7FCF3C1EB8883F004F4AEC /* videoRing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoRing.caf; sourceTree = "<group>"; };
+		8D7FCF3D1EB8883F004F4AEC /* wxFile.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = wxFile.pcm; sourceTree = "<group>"; };
 		8DB118D81E9F456C009E67A8 /* Tan_TestIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_TestIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB118DC1E9F456C009E67A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DB118E51E9F456D009E67A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +167,7 @@
 		8D1A1B551EB2DEBD00853852 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				8D7FCF2D1EB88541004F4AEC /* Audio */,
 				8D1A1B681EB2E68B00853852 /* Base */,
 				8D1A1B581EB2DEBD00853852 /* RunLoop */,
 				8D1A1B5B1EB2DEBD00853852 /* TestFMDB */,
@@ -245,6 +257,26 @@
 			path = Tan_Swift;
 			sourceTree = "<group>";
 		};
+		8D7FCF2D1EB88541004F4AEC /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				8D7FCF2E1EB88560004F4AEC /* TestAudioVC.h */,
+				8D7FCF2F1EB88560004F4AEC /* TestAudioVC.m */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		8D7FCF391EB8883F004F4AEC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8D7FCF3A1EB8883F004F4AEC /* qishiwang.mp3 */,
+				8D7FCF3B1EB8883F004F4AEC /* temp.wav */,
+				8D7FCF3C1EB8883F004F4AEC /* videoRing.caf */,
+				8D7FCF3D1EB8883F004F4AEC /* wxFile.pcm */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		8DB118CF1E9F456C009E67A8 = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +303,7 @@
 		8DB118DA1E9F456C009E67A8 /* Tan_TestIOS */ = {
 			isa = PBXGroup;
 			children = (
+				8D7FCF391EB8883F004F4AEC /* Resource */,
 				8D1A1B721EB2E6A700853852 /* Lib */,
 				8D1A1B611EB2E22C00853852 /* Other */,
 				8D1A1B551EB2DEBD00853852 /* Class */,
@@ -494,8 +527,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7FCF401EB8883F004F4AEC /* videoRing.caf in Resources */,
+				8D7FCF3F1EB8883F004F4AEC /* temp.wav in Resources */,
 				8DB118EB1E9F456D009E67A8 /* LaunchScreen.storyboard in Resources */,
 				8DB118E81E9F456D009E67A8 /* Assets.xcassets in Resources */,
+				8D7FCF3E1EB8883F004F4AEC /* qishiwang.mp3 in Resources */,
+				8D7FCF411EB8883F004F4AEC /* wxFile.pcm in Resources */,
 				8DB118E61E9F456D009E67A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +585,7 @@
 				8D1A1B971EB2E6ED00853852 /* FMResultSet.m in Sources */,
 				8D1A1B701EB2E68B00853852 /* BaseVC.m in Sources */,
 				8D1A1B941EB2E6ED00853852 /* FMDatabaseAdditions.m in Sources */,
+				8D7FCF301EB88560004F4AEC /* TestAudioVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
