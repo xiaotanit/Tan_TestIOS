@@ -120,6 +120,14 @@
                                     <segue destination="Ysj-PA-mG6" kind="modal" id="7H9-AQ-ptM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dob-eW-dIJ">
+                                <rect key="frame" x="76" y="379" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="YYModel"/>
+                                <connections>
+                                    <segue destination="Dis-aN-Wc1" kind="modal" id="3pJ-3i-K4U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -192,7 +200,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRS-ud-6M1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892" y="356.67166416791605"/>
+            <point key="canvasLocation" x="913" y="185"/>
+        </scene>
+        <!--TestYY ModelVC-->
+        <scene sceneID="P2p-lR-5hh">
+            <objects>
+                <viewController id="Dis-aN-Wc1" customClass="TestYYModelVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xUo-d3-Jag"/>
+                        <viewControllerLayoutGuide type="bottom" id="OmZ-HN-Gu4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eYt-Pk-cOO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-XX-6qi">
+                                <rect key="frame" x="16" y="70" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="json转模型"/>
+                                <connections>
+                                    <action selector="jsonConvertModel:" destination="Dis-aN-Wc1" eventType="touchUpInside" id="j5V-up-OaT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVa-Vk-GQg">
+                                <rect key="frame" x="117" y="70" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="模型转字典"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-SJ-Bfq">
+                                <rect key="frame" x="16" y="116" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aP3-WN-7Ui"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MwB-5a-LF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="871.21439280359823"/>
         </scene>
         <!--TestFMDBVC-->
         <scene sceneID="zxa-2u-jL2">
