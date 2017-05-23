@@ -226,6 +226,9 @@
                                 <rect key="frame" x="117" y="70" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="模型转字典"/>
+                                <connections>
+                                    <action selector="modelConvertDict:" destination="Dis-aN-Wc1" eventType="touchUpInside" id="Pb7-z3-JAd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-SJ-Bfq">
                                 <rect key="frame" x="16" y="116" width="74" height="30"/>
