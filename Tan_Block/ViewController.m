@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Person.h"
+#import "ReactiveCocoa.h"
 
 @interface ViewController ()
 
@@ -19,6 +20,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    
+}
+
+/** 测试block的使用 */
+- (IBAction)testBlockUse:(id)sender{
     /*
      快捷弹出block ---> inlineBlock
      返回类型  (^block名字)(参数) = ^(参数){ } //实现
@@ -50,6 +56,23 @@
     //3、block作为返回值 : 可以把类的方法用点语法点出来
     per.returnBlock();
     per.getBlock(@"李大霄");
+}
+
+/** RAC初体验1 */
+- (IBAction)testRAC1:(id)sender{
+    
+}
+
+- (IBAction)testRAC2:(id)sender{
+    
+}
+
+- (IBAction)testRAC3:(id)sender{
+    
+}
+
+- (IBAction)testRAC4:(id)sender{
+    
 }
 
 
