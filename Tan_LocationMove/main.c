@@ -8,6 +8,8 @@
 
 #include <stdio.h>
 
+void testConstPointer(); //测试常量指针
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     printf("Hello, World!\n");
@@ -164,8 +166,86 @@ int main(int argc, const char * argv[]) {
      */
     
     
+    testConstPointer(); //测试指向常量的指针，和常量指针
     
     
     printf("\n");
     return 0;
+}
+
+/* 指向整形常量的指针，指向整型的常量指针，指向整型常量的常量指针 */
+void testConstPointer(){
+    //1、指针变量，指针变量可间接修改值，指针变量也可重新赋值新变量地址
+    int a = 50, a2 = 22;
+    int *ap = &a;
+    *ap = 12;
+    
+    printf("测试1：a=%d, a地址：%x, *ap=%d, ap地址：%x, ap保存的地址：%x \n", a, &a, *ap, &ap, ap);
+    printf("变量a占用字节个数：%lu, 变量ap占用字节个数：%lu \n", sizeof(a), sizeof(ap));
+    //测试1：a=12, a地址：5fbff65c, *ap=12, ap地址：5fbff650, ap保存的地址：5fbff65c
+    //变量a占用字节个数：4, 变量ap占用字节个数：8
+    //验证一个问题：a占用的字节地址为5fbff65f-5fbff65c, ap占用的字节地址为：5fbff657-5fbff650
+    *ap = 13;
+    printf("测试2：a=%d, a地址：%x, *ap=%d, ap地址：%x, ap保存的地址：%x \n", a, &a, *ap, &ap, ap);
+    //测试2：a=13, a地址：5fbff65c, *ap=13, ap地址：5fbff650, ap保存的地址：5fbff65c
+    
+    ap = &a2;
+    printf("*ap=%d, a2=%d, &a2=%x, ap=%x \n", *ap, a2, &a2, ap);
+    //*ap=22, a2=22, &a2=5fbff658, ap=5fbff658  //说明指针变量可以重新指向其他变量
+    
+    
+    //2、测试指向整型常量的指针
+    int c = 19, c2 = 29;
+    int const *cp = &c;  //指向整型常量的指针
+    printf("c1: c=%d, *cp=%d, &c=%x, cp=%x \n", c, *cp, &c, cp);
+    //c1: c=19, *cp=19, &c=5fbff63c, cp=5fbff63c
+//    *cp = 20; //报错：Read-only variable is not assignable
+    //指向整形常量的指针，不能间接修改变量的值，因为指向整型常量
+    c = 20;  //但是原变量自己可以直接修改自己的值
+    printf("c2: c=%d, *cp=%d, &c=%x, cp=%x \n", c, *cp, &c, cp);
+    //c2: c=20, *cp=20, &c=5fbff63c, cp=5fbff63c
+    cp = &c2;
+    printf("c3: c2=%d, *cp=%d, &c2 = %x, cp=%x \n", c2, *cp, &c2, cp);
+    //c3: c2=29, *cp=29, &c2 = 5fbff638, cp=5fbff638
+    
+    
+    //3、测试指向整型的常量指针
+    int d = 31, d2 = 32;
+    int* const dp = &d;
+    printf("d1: d=%d, *dp=%d, &d=%x, dp=%x \n", d, *dp, &d, dp);
+    //d1: d=31, *dp=31, &d=5fbff63c, dp=5fbff63c
+    *dp = 3;
+    printf("d2: d=%d, *dp=%d, &d=%x, dp=%x \n", d, *dp, &d, dp);
+    //d2: d=3, *dp=3, &d=5fbff63c, dp=5fbff63c
+    
+//    dp = &d2; //报错：Cannot assign to variable 'dp' with const-qualified type 'int *const'
+    //指向整型的常量指针，不能再重新赋值其他变量地址。但是可以间接修改当前指向的变量的值
+    
+    
+    //4、测试指向整型常量的常量指针：既不能间接修改变量的值，也不能重新赋值新的变量地址
+    int e = 41, e2 = 42;
+    int const * const ep = &e;
+//    *ep = 48; //报错：Read-only vaiable is not assignable
+//    ep = &e2;//报错：Cannot assign to variable 'ep' with const-qualified type 'int *const'
+    
+    
+    //5、指向常量的指针变量
+    int const b = 50; //
+    //    b = 30;  //编译报错：Cannot assign to variable 'b' with const-qualified type 'const int'
+    int *bp = &b;
+    printf("b=%d, b地址: %x, bp保存的地址：%x, *bp: %d \n", b, &b, bp, *bp);
+    //b=50, b地址: 5fbff64c, bp保存的地址：5fbff64c, *bp: 50
+    
+    *bp = 88;
+    printf("修改后b=%d, b地址: %x, bp保存的地址：%x, *bp: %d \n", b, &b, bp, *bp);
+    //修改后b=50, b地址: 5fbff64c, bp保存的地址：5fbff64c, *bp: 88
+    /*
+     这个地方有点奇怪，b是常量，指针变量bp指向b, 间接通过指针bp修改变量的值，
+     但是最后打印结果是：*bp的值变了，b的值没有变（b是常量，指针变量bp指向b), 而且bp保存的地址和b的地址还是保持一样
+     这究竟是为啥？怎么理解 ？ 
+     变量被const修饰时，就复制了其值出来放到常量表中（由系统维护）
+     但是每次取常量时，它是从常量表找到以前的值，而不是再次读内存。
+     而指针变量bp可以修改指向地址里面的值。
+     不知这样理解是否正确？
+     */
 }

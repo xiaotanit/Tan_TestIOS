@@ -269,6 +269,16 @@ class ViewController: UIViewController {
         
     }
     
+    //测试元祖
+    @IBAction func testTuble(_ sender: Any) {
+        let tuble1 = (88, 58, 188, 988);
+        let tuble2 = ("love", 5188, 89.5, true);
+        let (varStr, varDouble, varBool, varInt) = ("王大锤", 88.8, false, 18);
+        
+        print("....test tuble start .....");
+        print("tuble1: \(tuble1), tuble2: \(tuble2)");
+        print("varStr: \(varStr), varDouble: \(varDouble), varBool: \(varBool), varInt: \(varInt)");
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
