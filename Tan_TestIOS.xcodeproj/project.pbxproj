@@ -18,6 +18,10 @@
 		8D1A1B961EB2E6ED00853852 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B8E1EB2E6ED00853852 /* FMDatabaseQueue.m */; };
 		8D1A1B971EB2E6ED00853852 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B911EB2E6ED00853852 /* FMResultSet.m */; };
 		8D1A1B9A1EB2E77300853852 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1A1B991EB2E77300853852 /* libsqlite3.tbd */; };
+		8D243A151F4D824E0006518F /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D243A141F4D824E0006518F /* MyView.m */; };
+		8D243A181F4D85840006518F /* TestEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D243A171F4D85840006518F /* TestEventVC.m */; };
+		8D243A1B1F4D8C7C0006518F /* MySubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D243A1A1F4D8C7C0006518F /* MySubView.m */; };
+		8D45AE5F1F4FBFF800FBBD07 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D45AE5E1F4FBFF800FBBD07 /* CameraVC.m */; };
 		8D66ED021EAA071000616746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66ED011EAA071000616746 /* AppDelegate.swift */; };
 		8D66ED041EAA071000616746 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66ED031EAA071000616746 /* ViewController.swift */; };
 		8D66ED071EAA071000616746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D66ED051EAA071000616746 /* Main.storyboard */; };
@@ -26,6 +30,7 @@
 		8D6AA43A1ED3E78E0032FADC /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6AA4361ED3E78E0032FADC /* NSObject+YYModel.m */; };
 		8D6AA43B1ED3E78E0032FADC /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6AA4381ED3E78E0032FADC /* YYClassInfo.m */; };
 		8D6AA43F1ED3E7C70032FADC /* TestYYModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6AA43E1ED3E7C70032FADC /* TestYYModelVC.m */; };
+		8D7DDBBE1F39BA0700732DEB /* TestOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DDBBD1F39BA0700732DEB /* TestOtherVC.m */; };
 		8D7FCF301EB88560004F4AEC /* TestAudioVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FCF2F1EB88560004F4AEC /* TestAudioVC.m */; };
 		8D7FCF3E1EB8883F004F4AEC /* qishiwang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FCF3A1EB8883F004F4AEC /* qishiwang.mp3 */; };
 		8D7FCF3F1EB8883F004F4AEC /* temp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FCF3B1EB8883F004F4AEC /* temp.wav */; };
@@ -87,6 +92,15 @@
 		8D1A1B901EB2E6ED00853852 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		8D1A1B911EB2E6ED00853852 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		8D1A1B991EB2E77300853852 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8D243A131F4D824E0006518F /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		8D243A141F4D824E0006518F /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		8D243A161F4D85840006518F /* TestEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestEventVC.h; sourceTree = "<group>"; };
+		8D243A171F4D85840006518F /* TestEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestEventVC.m; sourceTree = "<group>"; };
+		8D243A191F4D8C7C0006518F /* MySubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySubView.h; sourceTree = "<group>"; };
+		8D243A1A1F4D8C7C0006518F /* MySubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySubView.m; sourceTree = "<group>"; };
+		8D45AE5D1F4FBFF800FBBD07 /* CameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraVC.h; sourceTree = "<group>"; };
+		8D45AE5E1F4FBFF800FBBD07 /* CameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraVC.m; sourceTree = "<group>"; };
+		8D45AE601F4FC34F00FBBD07 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8D66ECFF1EAA071000616746 /* Tan_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D66ED011EAA071000616746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D66ED031EAA071000616746 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +115,8 @@
 		8D6AA4391ED3E78E0032FADC /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		8D6AA43D1ED3E7C70032FADC /* TestYYModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestYYModelVC.h; sourceTree = "<group>"; };
 		8D6AA43E1ED3E7C70032FADC /* TestYYModelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestYYModelVC.m; sourceTree = "<group>"; };
+		8D7DDBBC1F39BA0700732DEB /* TestOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOtherVC.h; sourceTree = "<group>"; };
+		8D7DDBBD1F39BA0700732DEB /* TestOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestOtherVC.m; sourceTree = "<group>"; };
 		8D7FCF2E1EB88560004F4AEC /* TestAudioVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAudioVC.h; sourceTree = "<group>"; };
 		8D7FCF2F1EB88560004F4AEC /* TestAudioVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAudioVC.m; sourceTree = "<group>"; };
 		8D7FCF3A1EB8883F004F4AEC /* qishiwang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = qishiwang.mp3; sourceTree = "<group>"; };
@@ -177,6 +193,7 @@
 		8D1A1B551EB2DEBD00853852 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				8D7DDBBB1F39B9F400732DEB /* TestOther */,
 				8D6AA43C1ED3E7A80032FADC /* TestYYModel */,
 				8D7FCF2D1EB88541004F4AEC /* Audio */,
 				8D1A1B681EB2E68B00853852 /* Base */,
@@ -212,6 +229,7 @@
 				8DB118E91E9F456D009E67A8 /* LaunchScreen.storyboard */,
 				8DB118EC1E9F456D009E67A8 /* Info.plist */,
 				8DB118DB1E9F456C009E67A8 /* Supporting Files */,
+				8D45AE601F4FC34F00FBBD07 /* PrefixHeader.pch */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -256,6 +274,26 @@
 			path = FMDB;
 			sourceTree = "<group>";
 		};
+		8D243A121F4D82280006518F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D243A131F4D824E0006518F /* MyView.h */,
+				8D243A141F4D824E0006518F /* MyView.m */,
+				8D243A191F4D8C7C0006518F /* MySubView.h */,
+				8D243A1A1F4D8C7C0006518F /* MySubView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D45AE5C1F4FBFDA00FBBD07 /* cameraOrAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				8D45AE5D1F4FBFF800FBBD07 /* CameraVC.h */,
+				8D45AE5E1F4FBFF800FBBD07 /* CameraVC.m */,
+			);
+			path = cameraOrAlbum;
+			sourceTree = "<group>";
+		};
 		8D66ED001EAA071000616746 /* Tan_Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +326,19 @@
 				8D6AA43E1ED3E7C70032FADC /* TestYYModelVC.m */,
 			);
 			path = TestYYModel;
+			sourceTree = "<group>";
+		};
+		8D7DDBBB1F39B9F400732DEB /* TestOther */ = {
+			isa = PBXGroup;
+			children = (
+				8D45AE5C1F4FBFDA00FBBD07 /* cameraOrAlbum */,
+				8D243A121F4D82280006518F /* View */,
+				8D7DDBBC1F39BA0700732DEB /* TestOtherVC.h */,
+				8D7DDBBD1F39BA0700732DEB /* TestOtherVC.m */,
+				8D243A161F4D85840006518F /* TestEventVC.h */,
+				8D243A171F4D85840006518F /* TestEventVC.m */,
+			);
+			path = TestOther;
 			sourceTree = "<group>";
 		};
 		8D7FCF2D1EB88541004F4AEC /* Audio */ = {
@@ -610,9 +661,13 @@
 				8D6AA43A1ED3E78E0032FADC /* NSObject+YYModel.m in Sources */,
 				8D1A1B711EB2E68B00853852 /* ViewController.m in Sources */,
 				8D1A1B5F1EB2DEBD00853852 /* TestVC.m in Sources */,
+				8D7DDBBE1F39BA0700732DEB /* TestOtherVC.m in Sources */,
 				8DB118DD1E9F456C009E67A8 /* main.m in Sources */,
 				8D1A1B931EB2E6ED00853852 /* FMDatabase.m in Sources */,
 				8D1A1B951EB2E6ED00853852 /* FMDatabasePool.m in Sources */,
+				8D45AE5F1F4FBFF800FBBD07 /* CameraVC.m in Sources */,
+				8D243A181F4D85840006518F /* TestEventVC.m in Sources */,
+				8D243A151F4D824E0006518F /* MyView.m in Sources */,
 				8D6AA43B1ED3E78E0032FADC /* YYClassInfo.m in Sources */,
 				8D1A1B961EB2E6ED00853852 /* FMDatabaseQueue.m in Sources */,
 				8D6AA43F1ED3E7C70032FADC /* TestYYModelVC.m in Sources */,
@@ -620,6 +675,7 @@
 				8D1A1B6F1EB2E68B00853852 /* AppDelegate.m in Sources */,
 				8D1A1B971EB2E6ED00853852 /* FMResultSet.m in Sources */,
 				8D1A1B701EB2E68B00853852 /* BaseVC.m in Sources */,
+				8D243A1B1F4D8C7C0006518F /* MySubView.m in Sources */,
 				8D1A1B941EB2E6ED00853852 /* FMDatabaseAdditions.m in Sources */,
 				8D7FCF301EB88560004F4AEC /* TestAudioVC.m in Sources */,
 			);
@@ -844,6 +900,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: you me (C9EZJ36TTC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: you me (C9EZJ36TTC)";
 				DEVELOPMENT_TEAM = 38ZB8SW96P;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Tan_TestIOS/PrefixHeader.pch";
 				INFOPLIST_FILE = Tan_TestIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yam.Tan-TestIOS";
@@ -858,6 +916,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Tan_TestIOS/PrefixHeader.pch";
 				INFOPLIST_FILE = Tan_TestIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yam.Tan-TestIOS";

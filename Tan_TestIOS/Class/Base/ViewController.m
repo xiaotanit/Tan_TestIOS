@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "TestVC.h"
+#import "TestOtherVC.h"
+#import "TestEventVC.h"
+#import "CameraVC.h"    //相机和相册
 
 @interface ViewController () <UITextFieldDelegate, UITextViewDelegate>
 
@@ -301,6 +304,20 @@
     if (vc) [self presentViewController:vc animated:YES completion:nil];
 }
 
+/* 测试其他的 */
+- (IBAction)testOther:(id)sender{
+//    TestOtherVC *vc = [TestOtherVC new];
+//    [self presentViewController:vc animated:YES completion:nil];
+    
+    TestEventVC *vc = [TestEventVC new];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+/* 打开相机和从相册选择相片 */
+- (IBAction)testCameraOrAlbum:(id)sender{
+    CameraVC *vc = [CameraVC new];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

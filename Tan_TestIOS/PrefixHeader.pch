@@ -1,0 +1,42 @@
+//
+//  PrefixHeader.pch
+//  Tan_TestIOS
+//
+//  Created by M C on 2017/8/25.
+//  Copyright © 2017年 M C. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//rgb颜色设置
+#define UIColorFromRGB(r,g,b)  [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+//屏幕的宽高
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+//1.1、 (颜色为：深蓝色)
+#define COLOR_BLUE UIColorFromRGB(106,145,227)  //对应：#6a91e3
+
+//1.2、（颜色为：铁青色/铅色（深色））
+#define COLOR_LIVIDITY UIColorFromRGB(97,105,128) //对应：#616980
+
+//1.3、（颜色为：红色）
+#define COLOR_RED UIColorFromRGB(244,53,48)  //对应：#f43530
+
+//1.4、默认背景（颜色为：灰白色）
+#define COLOR_DEFAULT UIColorFromRGB(248,248,248) //对应：#f8f8f8
+
+//1.5、（颜色为：深黑色）
+#define COLOR_BLACK UIColorFromRGB(51,51,51) //对应：#333333
+
+//1.6、（颜色为：灰色）
+#define COLOR_GRAY UIColorFromRGB(153,153,153) //对应：#999999
+
+//1.7、分割线：#e6e6e6
+#define COLOR_LINE UIColorFromRGB(230,230,230) //对应：#e6e6e6
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
