@@ -23,6 +23,10 @@ class ViewController: UIViewController {
         self.testAssertion()        //7、断言测试
         self.testString()           //8、测试字符串
         print("..^_^...end...^_^..")
+        
+        let label = "hello"
+        let num = 33
+        let one = String(num) + label;
     }
     
     // 测试一次定义多个变量
@@ -224,6 +228,56 @@ class ViewController: UIViewController {
 //        let str : String = "test is"
 //        let str2 : String = str.substring(to, 3) //制造异常
 //        print("str: \(str), str2: \(str2)")
+    }
+    
+    //字符串插值, 打印测试
+    @IBAction func testPrint(_ sender: Any) {
+        //1、字符串插值
+        var name = "Hello"
+        let TITLE = "倚天屠龙记", MAXAGE = 149, MAXHEIGHT = 250.0;
+        
+        print("print the variable and constant  name: \(name), TITLE: \(TITLE), MAXAGE: \(MAXAGE), MAXHEIGHT: \(MAXHEIGHT)");
+        //print the variable and constant  name: Hello, TITLE: 倚天屠龙记, MAXAGE: 149, MAXHEIGHT: 250.0
+        
+        name = "王大锤"
+//        MAXHEIGHT = 200.0;  //常量不能重新赋值，重新赋值编译报错
+        print("update variable value name: \(name)");
+        //update variable value name: 王大锤
+        
+        
+        //2、整型字面量
+        /*
+         说明：10进制没有前缀，二进制前缀为0b, 八进制前缀为0o, 十六进制为0x
+         */
+        let num1 = 88; //十进制表示88
+        let num2 = 0b1011000; //二进制表示88
+        let num3 = 0o130;     //八进制表示88
+        let num4 = 0x58;      //十六进制表示88
+        print("multiple way show int, num1: \(num1), num2: \(num2), num3: \(num3), num4: \(num4) ");
+        //打印结果：multiple way show int, num1: 88, num2: 88, num3: 88, num4: 88
+        
+        
+        //3、10的多次幂
+        let num5 = 8e2; //8乘以10的2次方 = 800
+        let num6 = 0.5e-2; //0.5乘以10的-2次方 = 0.005
+        let num7 = 8e-3;  //8乘以10的-3次方 = 0.008
+        
+        let num8 = 0x8p3;   //十六进制8乘以2的3次方 = 64
+        let num9 = 0xfp-3; //十六进制f乘以2的-3次方 = 15 * 1/8 = 1.875
+        print("num5: \(num5), num6: \(num6), num7: \(num7), num8: \(num8), num9: \(num9)");
+        //num5: 800.0, num6: 0.005, num7: 0.008, num8: 64.0, num9: 1.875
+        
+    }
+    
+    //测试元祖
+    @IBAction func testTuble(_ sender: Any) {
+        let tuble1 = (88, 58, 188, 988);
+        let tuble2 = ("love", 5188, 89.5, true);
+        let (varStr, varDouble, varBool, varInt) = ("王大锤", 88.8, false, 18);
+        
+        print("....test tuble start .....");
+        print("tuble1: \(tuble1), tuble2: \(tuble2)");
+        print("varStr: \(varStr), varDouble: \(varDouble), varBool: \(varBool), varInt: \(varInt)");
     }
 
     override func didReceiveMemoryWarning() {

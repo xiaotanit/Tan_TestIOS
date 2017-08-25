@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A98FDD052FA2E821F9B99D2 /* Pods_Tan_Block.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9EA4FE6A71B5C23C1FC9C8 /* Pods_Tan_Block.framework */; };
 		8D1A1B5F1EB2DEBD00853852 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B5A1EB2DEBD00853852 /* TestVC.m */; };
 		8D1A1B641EB2E30400853852 /* TestFMDBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B631EB2E30400853852 /* TestFMDBVC.m */; };
 		8D1A1B6F1EB2E68B00853852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A1B6A1EB2E68B00853852 /* AppDelegate.m */; };
@@ -47,6 +48,7 @@
 		8DE8E15E1EB0502E00DD5975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE8E15C1EB0502E00DD5975 /* Main.storyboard */; };
 		8DE8E1601EB0502E00DD5975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE8E15F1EB0502E00DD5975 /* Assets.xcassets */; };
 		8DE8E1631EB0502E00DD5975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE8E1611EB0502E00DD5975 /* LaunchScreen.storyboard */; };
+		ED3F5F271ECE6700006834D2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = ED3F5F261ECE6700006834D2 /* main.c */; };
 		EDDC27481EAF98C900B2B263 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC27471EAF98C900B2B263 /* main.m */; };
 		EDDC274B1EAF98CA00B2B263 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC274A1EAF98CA00B2B263 /* AppDelegate.m */; };
 		EDDC274E1EAF98CA00B2B263 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDC274D1EAF98CA00B2B263 /* ViewController.m */; };
@@ -67,9 +69,21 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED3F5F221ECE6700006834D2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C2214F9E52F3DE5290B23A8 /* Pods-Tan_Block.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tan_Block.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tan_Block/Pods-Tan_Block.debug.xcconfig"; sourceTree = "<group>"; };
+		2B9EA4FE6A71B5C23C1FC9C8 /* Pods_Tan_Block.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tan_Block.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE9C7A165571C523940EEED /* Pods-Tan_Block.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tan_Block.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tan_Block/Pods-Tan_Block.release.xcconfig"; sourceTree = "<group>"; };
 		8D1A1B591EB2DEBD00853852 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
 		8D1A1B5A1EB2DEBD00853852 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 		8D1A1B621EB2E30400853852 /* TestFMDBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFMDBVC.h; sourceTree = "<group>"; };
@@ -143,6 +157,8 @@
 		8DE8E15F1EB0502E00DD5975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DE8E1621EB0502E00DD5975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DE8E1641EB0502E00DD5975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED3F5F241ECE6700006834D2 /* Tan_LocationMove */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tan_LocationMove; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3F5F261ECE6700006834D2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		EDDC27441EAF98C900B2B263 /* Tan_Block.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tan_Block.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDC27471EAF98C900B2B263 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDDC27491EAF98C900B2B263 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,10 +196,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED3F5F211ECE6700006834D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDDC27411EAF98C900B2B263 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A98FDD052FA2E821F9B99D2 /* Pods_Tan_Block.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,8 +392,10 @@
 				8D66ED001EAA071000616746 /* Tan_Swift */,
 				EDDC27451EAF98C900B2B263 /* Tan_Block */,
 				8DE8E1521EB0502E00DD5975 /* Tan_Notification */,
+				ED3F5F251ECE6700006834D2 /* Tan_LocationMove */,
 				8DBAFACE1EB0A3E60009DEEC /* Frameworks */,
 				8DB118D91E9F456C009E67A8 /* Products */,
+				CCAA42D607A5CC3199ADEBEE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -380,6 +406,7 @@
 				8D66ECFF1EAA071000616746 /* Tan_Swift.app */,
 				EDDC27441EAF98C900B2B263 /* Tan_Block.app */,
 				8DE8E1511EB0502E00DD5975 /* Tan_Notification.app */,
+				ED3F5F241ECE6700006834D2 /* Tan_LocationMove */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -409,6 +436,7 @@
 				8D1A1B991EB2E77300853852 /* libsqlite3.tbd */,
 				8DBAFACF1EB0A3E60009DEEC /* UserNotifications.framework */,
 				8DBAFAD11EB0A3E60009DEEC /* UserNotificationsUI.framework */,
+				2B9EA4FE6A71B5C23C1FC9C8 /* Pods_Tan_Block.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -437,6 +465,23 @@
 				8DE8E1541EB0502E00DD5975 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CCAA42D607A5CC3199ADEBEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C2214F9E52F3DE5290B23A8 /* Pods-Tan_Block.debug.xcconfig */,
+				5BE9C7A165571C523940EEED /* Pods-Tan_Block.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED3F5F251ECE6700006834D2 /* Tan_LocationMove */ = {
+			isa = PBXGroup;
+			children = (
+				ED3F5F261ECE6700006834D2 /* main.c */,
+			);
+			path = Tan_LocationMove;
 			sourceTree = "<group>";
 		};
 		EDDC27451EAF98C900B2B263 /* Tan_Block */ = {
@@ -520,13 +565,33 @@
 			productReference = 8DE8E1511EB0502E00DD5975 /* Tan_Notification.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ED3F5F231ECE6700006834D2 /* Tan_LocationMove */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED3F5F2A1ECE6700006834D2 /* Build configuration list for PBXNativeTarget "Tan_LocationMove" */;
+			buildPhases = (
+				ED3F5F201ECE6700006834D2 /* Sources */,
+				ED3F5F211ECE6700006834D2 /* Frameworks */,
+				ED3F5F221ECE6700006834D2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tan_LocationMove;
+			productName = Tan_LocationMove;
+			productReference = ED3F5F241ECE6700006834D2 /* Tan_LocationMove */;
+			productType = "com.apple.product-type.tool";
+		};
 		EDDC27431EAF98C900B2B263 /* Tan_Block */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDDC275A1EAF98CA00B2B263 /* Build configuration list for PBXNativeTarget "Tan_Block" */;
 			buildPhases = (
+				99E96C598BB122CC6AE972B7 /* [CP] Check Pods Manifest.lock */,
 				EDDC27401EAF98C900B2B263 /* Sources */,
 				EDDC27411EAF98C900B2B263 /* Frameworks */,
 				EDDC27421EAF98C900B2B263 /* Resources */,
+				7459E3AB3E6CEF2884A7FCAB /* [CP] Embed Pods Frameworks */,
+				DA220047AE04F7B040E89221 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -569,8 +634,13 @@
 							};
 						};
 					};
+					ED3F5F231ECE6700006834D2 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
 					EDDC27431EAF98C900B2B263 = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -592,6 +662,7 @@
 				8D66ECFE1EAA071000616746 /* Tan_Swift */,
 				EDDC27431EAF98C900B2B263 /* Tan_Block */,
 				8DE8E1501EB0502E00DD5975 /* Tan_Notification */,
+				ED3F5F231ECE6700006834D2 /* Tan_LocationMove */,
 			);
 		};
 /* End PBXProject section */
@@ -644,6 +715,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7459E3AB3E6CEF2884A7FCAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tan_Block/Pods-Tan_Block-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99E96C598BB122CC6AE972B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DA220047AE04F7B040E89221 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tan_Block/Pods-Tan_Block-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D66ECFB1EAA071000616746 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -688,6 +807,14 @@
 				8DE8E15B1EB0502E00DD5975 /* ViewController.m in Sources */,
 				8DE8E1581EB0502E00DD5975 /* AppDelegate.m in Sources */,
 				8DE8E1551EB0502E00DD5975 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED3F5F201ECE6700006834D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED3F5F271ECE6700006834D2 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,8 +1083,31 @@
 			};
 			name = Release;
 		};
+		ED3F5F281ECE6700006834D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		ED3F5F291ECE6700006834D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		EDDC27581EAF98CA00B2B263 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C2214F9E52F3DE5290B23A8 /* Pods-Tan_Block.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -966,11 +1116,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xindongai.Tan-Block";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		EDDC27591EAF98CA00B2B263 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BE9C7A165571C523940EEED /* Pods-Tan_Block.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -979,6 +1131,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xindongai.Tan-Block";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1020,6 +1173,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		ED3F5F2A1ECE6700006834D2 /* Build configuration list for PBXNativeTarget "Tan_LocationMove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED3F5F281ECE6700006834D2 /* Debug */,
+				ED3F5F291ECE6700006834D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		EDDC275A1EAF98CA00B2B263 /* Build configuration list for PBXNativeTarget "Tan_Block" */ = {
 			isa = XCConfigurationList;
